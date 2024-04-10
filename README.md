@@ -1,18 +1,20 @@
-# Nome do projeto
+# Achados e perdidos
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+O objetivo geral deste projeto é desenvolver um sistema web de achados e perdidos que ofereça uma interface amigável e centralize informações de itens perdidos e encontrados, facilitando a comunicação e a devolução eficiente dos objetos aos seus respectivos donos em uma comunidade específica, como um campus universitário, uma empresa ou um evento.
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Danilo Henrique de Souza Riguette
+* Gustavo Inacio Jeronymo Oliveira
+* Igor Barroso Almeida
+* João Paulo Pimentel da Silva
+* Júlia Saquel Santana de Oliveira
+* Pedro
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Caroline Rhaian da Silva Jandre
+* Pedro Felipe Alves de Oliveira
 
 ## Instruções de utilização
 
