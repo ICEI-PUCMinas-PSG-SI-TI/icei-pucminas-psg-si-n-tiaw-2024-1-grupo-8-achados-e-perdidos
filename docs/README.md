@@ -90,8 +90,8 @@ Fluxo de usuário (User Flow) foi criado pensando em facilitar para o usuario, c
 
 **Links Úteis**:
 
-- [User Flow Design]((https://www.figma.com/file/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=0%3A1&mode=design&t=YpMQw3icjWZlvHiT-1))
-- [User Flow prototipo ](https://www.figma.com/proto/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=6-5&t=mWSLqCLQSNcleV9Z-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A5&mode=design))
+- [User Flow Design](https://www.figma.com/file/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=0%3A1&mode=design&t=YpMQw3icjWZlvHiT-1)
+- [User Flow prototipo](https://www.figma.com/proto/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=6-5&t=mWSLqCLQSNcleV9Z-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A5&mode=design)
 
 
 ## Wireframes
