@@ -20,7 +20,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 ## Gestão de código fonte
 Para gerenciar o código-fonte do software que a equipe desenvolve, usamos um processo chamado Git Feature Branch Workflow, conforme ilustrado na Figura 1. Esse método garante que todas as alterações no código sejam feitas em ramificações separadas.
 
-![workflow](images/img_workflow.jpg)
+![workflow](images/workflow.jpg)
 Figura 1 - Fluxo de controle do código fonte no repositório git
 
 ## Gerenciamento do Projeto
@@ -52,7 +52,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 O quadro kanban do grupo no GitHub está disponível através da URL https://github.com/orgs/ICEI-PUCMinas-PSG-SI-TI/projects/42/views/1 e é apresentado, no estado atual, na Figura 2. 
 
-![Kanban GitHub](images/img_kanbanSprint1.jpg)
+![Kanban GitHub](images/kanbanSprint1.jpg)
 
 
 
