@@ -9,7 +9,7 @@ O objetivo geral deste projeto é desenvolver um sistema web de achados e perdid
 * Igor Barroso Almeida
 * João Paulo Pimentel da Silva
 * Júlia Saquel Santana de Oliveira
-* Pedro
+* Pedro Henrique Florêncio da Silva
 
 ## Professores responsáveis
 
