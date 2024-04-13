@@ -86,13 +86,13 @@ Lembre-se que cada requisito deve corresponder à uma e somente uma característ
 
 ## User Flow
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
+Fluxo de usuário (User Flow) foi criado pensando em facilitar para o usuario, com telas interativas que chamam a atenção das pesssoas e que são de facil entendimento.
 
 **Links Úteis**:
 
-- [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-- [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-- [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+- [User Flow Design]((https://www.figma.com/file/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=0%3A1&mode=design&t=YpMQw3icjWZlvHiT-1))
+- [User Flow prototipo ](https://www.figma.com/proto/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=6-5&t=mWSLqCLQSNcleV9Z-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A5&mode=design))
+
 
 ## Wireframes
 
