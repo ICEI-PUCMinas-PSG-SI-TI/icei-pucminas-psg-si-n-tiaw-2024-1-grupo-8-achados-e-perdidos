@@ -86,35 +86,55 @@ Lembre-se que cada requisito deve corresponder à uma e somente uma característ
 
 ## User Flow
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
+Fluxo de usuário (User Flow) foi criado pensando em facilitar para o usuario, com telas interativas que chamam a atenção das pesssoas e que são de facil entendimento.
 
 **Links Úteis**:
 
-- [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-- [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-- [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+- [User Flow Design](https://www.figma.com/file/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=0%3A1&mode=design&t=YpMQw3icjWZlvHiT-1)
+- [User Flow prototipo](https://www.figma.com/proto/5NIgdZdwJcoMngBUhJuoaw/Untitled?type=design&node-id=6-5&t=mWSLqCLQSNcleV9Z-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=6%3A5&mode=design)
+
 
 ## Wireframes
 
-Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
-
+O wireframe do site é um esboço visual que mostra a estrutura básica e o layout das páginas, permitindo uma compreensão clara da organização e funcionalidades do site.
 **Links Úteis**:
 
-- [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-- [Figma](https://www.figma.com/)
-- [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-- [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+- [ Wireframes](https://www.figma.com/file/yVosVg5piTvUuxNzJVHZLA/Untitled?type=design&mode=design&t=YpMQw3icjWZlvHiT-1)
+- [wireframe Prototipo](https://www.figma.com/proto/yVosVg5piTvUuxNzJVHZLA/Untitled?type=design&t=exi3ic2JdvVbaY7b-1&scaling=scale-down&page-id=0%3A1&node-id=3-52&starting-point-node-id=3%3A37&mode=design)
 
-## Gestão de Projetos
+## Gerenciamento do Projeto
 
- Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
+A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento.
 
-Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+A equipe está organizada da seguinte maneira:
 
-**Links Úteis**:
 
-- [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-- [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-- [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-- [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+| Membro   | Função   | Descrição |
+| -------- | -------- | --------- |
+| Professores | Líderes de Projeto |Responsáveis pela orientação e acompanhamento do projeto.|
+| Danilo Riguette | Scrum Master e Dev |Responsável pela organização e gestão do projeto, além de contribuir com o desenvolvimento.|
+| Júlia Raquel | Designer e Dev |Responsável pela criação da interface do usuário e pelo desenvolvimento de funcionalidades.|
+| Igor Barroso | Dev |Responsável pela escrita do código do projeto.|
+| Gustavo | Dev |Responsável pela escrita do código do projeto.|
+| Pedro Florêncio |Dev |Responsável pela escrita do código do projeto.|
+| João Paulo | Dev|Responsável pela escrita do código do projeto.|
+
+
+
+
+Para organização e distribuição das tarefas do projeto, a equipe está utilizando o GitHub estruturado com as seguintes listas: 
+
+* To Do: Esta lista representa as tarefas ainda não iniciadas.
+* In Progress: Quando uma tarefa tiver sido iniciada, ela é movida para cá.
+* Review: Checagem de Qualidade. Quando as tarefas são concluídas. No final de cada semana, haverá uma reunião para analisar cada tarefa desta lista, garantindo assim, que tudo saia perfeito.
+* Done: Nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para serem entregues ao usuário. Não há mais edições ou revisões necessárias, ele está agendado e pronto para a ação.
+.
+
+O quadro kanban do grupo no GitHub está disponível através da URL https://github.com/orgs/ICEI-PUCMinas-PSG-SI-TI/projects/42/views/1 e é apresentado, no estado atual, na Figura 2. 
+
+![Kanban GitHub](images/kanbanSprint1.jpg)
+
+
+
+
+
