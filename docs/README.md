@@ -22,12 +22,6 @@ Esta seção traz explicações breves sobre o conjunto de artefatos que precisa
 
 Atualmente, muitas instituições e locais públicos possuem sistemas de achados e perdidos que são fragmentados, pouco eficientes e não interconectados. Isso resulta em uma baixa taxa de recuperação de objetos perdidos e em frustração para os usuários que perdem tempo tentando localizar seus pertences sem sucesso. Além disso, a falta de um sistema padronizado e acessível aumenta as chances de itens acabarem esquecidos ou descartados, gerando desperdício e perda.
 
-**Links Úteis**:
-
-- [Objetivos, Problema de pesquisa e Justificativa](http://jornaldapuc.vrc.puc-rio.br/cgi/cgilua.exe/sys/start.htm?infoid=1128&sid=29)
-- [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-- [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
 ## Objetivos
 
 O objetivo geral deste projeto é desenvolver um sistema web de achados e perdidos que ofereça uma interface amigável e centralize informações de itens perdidos e encontrados, facilitando a comunicação e a devolução eficiente dos objetos aos seus respectivos donos em uma comunidade específica, como um campus universitário, uma empresa ou um evento.
@@ -49,8 +43,26 @@ Adicione informações sobre o público-alvo por meio de uma descrição textual
 
 
 ## Personas
+| Membro   | Função   | Descrição |
+| -------- | -------- | --------- |
 
-Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
+
+Baseado no público alvo, criamos algumas personas que serão envolvidos com a solução. No geral, alunos foram usados de exemplo e entrevistados para o planejamento:
+| Matheus Filipe |
+| -------------------------------- |
+
+| ![Matheus Filipe](images/persona1.jpg) |	Idade: 19 Ocupação: Trabalha na empresa Group Software | Aplicativos: |
+|                                        | e é estudante de sistemas de informação na PUC Minas. | ●	Instagram |
+|                                                                                                   | ●	Youtube |                                                                                                   
+|------------|---------|----------|
+Motivações
+●	Trabalhar como dev mobile
+●	Aprender novas tecnologias	Frustrações
+●	Rotina de trabalho e faculdade simultaneamente.	Hobbies
+●	Jogar
+●	Consumir conteúdo (vídeos, séries, filmes, livros)
+●	Passar tempo com amigos
+
 
 **Links Úteis**:
 
