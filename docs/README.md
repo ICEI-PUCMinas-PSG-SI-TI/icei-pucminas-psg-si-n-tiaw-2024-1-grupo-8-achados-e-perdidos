@@ -48,20 +48,22 @@ Adicione informações sobre o público-alvo por meio de uma descrição textual
 
 
 Baseado no público alvo, criamos algumas personas que serão envolvidos com a solução. No geral, alunos foram usados de exemplo e entrevistados para o planejamento:
-| Matheus Filipe |
-| -------------------------------- |
 
-| ![Matheus Filipe](images/persona1.jpg) |	Idade: 19 Ocupação: Trabalha na empresa Group Software | Aplicativos: |
-|                                        | e é estudante de sistemas de informação na PUC Minas. | ●	Instagram |
-|                                                                                                   | ●	Youtube |                                                                                                   
-|------------|---------|----------|
-Motivações
-●	Trabalhar como dev mobile
-●	Aprender novas tecnologias	Frustrações
-●	Rotina de trabalho e faculdade simultaneamente.	Hobbies
-●	Jogar
-●	Consumir conteúdo (vídeos, séries, filmes, livros)
-●	Passar tempo com amigos
+| -------------   | Matheus Filipe | ---------------- |
+| -------- | ----------------------              | --------- |
+| ![Matheus Filipe](images/persona1.jpg) |	Idade: 19. Ocupação: Trabalha na empresa Group Software e é estudante de sistemas de informação na PUC Minas.  | Aplicativos: Instagram, Youtube  |
+| Motivações: Trabalhar como dev mobile, Aprender novas tecnologias  |	Frustrações: Rotina de trabalho e faculdade simultaneamente.  | Hobbies: Jogar, Consumir conteúdo (vídeos, séries, filmes, livros), Passar tempo com amigos  |
+
+| -------------   | Júlia Almeida  | ---------------- |
+| -------- | ----------------------              | --------- |
+| ![Júlia Almeida](images/persona2.jpg) |	Idade: 18. Ocupação: Estudante de sistemas de informação na UFMG.   | Aplicativos: Facebook, Instagram, Whatsapp |
+|  Motivações: Perspectiva de carreira, Condição econômica.   |	Frustrações: Pressão acadêmica por bons resultados, Conciliação de vida pessoal e vida acadêmica. | Hobbies: História, Ler, Assistir filmes e séries, Encontrar com a família e amigos, academia. |
+
+| -------------   | Andréa Ferreira  | ---------------- |
+| -------- | ----------------------              | --------- |
+| ![Andréa Ferreira ](images/persona3.jpg) |	Idade: 25. Ocupação: Estudante de letras na UFRJ e trabalha na área da educação como monitora e professora substituita.   | Aplicativos: Instagram, Youtube  |
+| Motivações: Conhecer o mundo, Ampliar e compartilhar conhecimento através da educação   |	Frustrações: Desmotivação e falta de esperança na profissão, Intolerância.  | Hobbies: Assistir filmes, Praia, Trabalhar a criatividade  |
+
 
 
 **Links Úteis**:
@@ -73,7 +75,18 @@ Motivações
 
 ## Histórias de Usuários
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+A partir da compreensão do dia a dia das personas identificadas para o projeto, foram registradas as seguintes histórias de usuários. 
+
+| Eu como …  [PERSONA]   | … quero/desejo … [O QUE] | … para .... [POR QUE]  |
+| -------- | ----------------------              | --------- |
+| Matheus Filipe  |	Iquero poder registrar um item que encontrei rapidamente, fornecendo detalhes como descrição, local e data em que encontrei | para que o dono do item em questão consiga encontra-lo |
+| Matheus Filipe  |	quero poder marcar um item como encontrado | para sinalizar que o item foi encontrado pelo dono. |
+| Júlia Almeida   |	quero poder procurar entre os itens perdidos   | para encontrar o meu item mais facilmente. |
+| Júlia Almeida   |	quero poder pesquisar pelo nome de uma instituição  | para encontrar mais facilmente o item no caso de eu saber onde perdi.  |
+| Júlia Almeida   |	quero poder filtrar pelo tipo de item (roupas, eletrônicos, documentos…)  | para facilitar a achar o meu item perdido.  |
+| Andréa Ferreira |	quero poder cadastrar facilmente uma instituição que quer registrar seus achados e perdidos  | para que eu possa ter um achados e perdidos específico da instituição que eu frequento. |
+| Andréa Ferreira |	quero poder colocar descrição sobre a minha instituição   | para informar os usuários sobre dados de contato, por exemplo. |
+
 
 **Links Úteis**:
 
@@ -82,12 +95,49 @@ Apresente aqui as histórias de usuário que são relevantes para o projeto de s
 
 ## Requisitos
 
-Os requisitos de um projeto são classificados em dois grupos:
+Levando em conta todas as histórias dos usuários é preciso deixar os requisitos dos projetos mais claros de maneira a definir requisitos funcionais (features, funcionalidades e especificações sobre como funcionará a aplicação), requisitos não funcionais (características do sistema além das funcionalidades, como segurança, desempenho e usabilidade) e restrições do projeto. Dessa forma o processo de desenvolvimento toma forma ao ter tarefas específicas e organizadas por prioridade. 
+
+## Requisitos Funcionais 
+
+| ID | Descrição | Prioridade |
+| -------- | ----------------------              | --------- |
+| RF-01  |	O site deve ter a opção de cadastrar uma instituição/estabelecimento com nome, descrição…   | Alta  |
+| RF-02  |	O site deve ter a função de cadastrar o item perdido com nome, descrição…    | Alta  |
+| RF-03  |	O site deve ter uma tela listando itens perdidos em forma de cards que devem conter um nome e descrição breve da instituição/estabelecimento.    | Alta  |
+| RF-04  |	O site deve ter uma tela listando todas as instituições em forma de cards que devem conter um nome e descrição breve da instituição/estabelecimento.    | Alta  |
+| RF-05  |	O site deve ter a opção de marcar um item como encontrado.   | Alta  |
+| RF-06  |	O site deve ter uma barra de busca para procurar instituições.  | Média   |
+| RF-07  |	O site deve ter uma barra de busca para procurar itens perdidos.  | Média   |
+| RF-08  |	O site deve ter uma página de achados recentes.  | Média   |
+| RF-09  |	O site deve permitir editar as informações de uma instituição e de um item.    | Média   |
+| RF-10  |	O site deve ter uma página “Sobre nós” que vai contar um pouco sobre o propósito da equipe e sobre o projeto.   | Baixa   |
+| RF-11  |	O site deve ter a opção de colocar tags nos itens.  | Baixa   |
+| RF-12  |	O site deve ter a opção de filtrar os itens de acordo com sua respectiva tag.   | Baixa   |
 
 - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
   correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
+
+
+  ## Requisitos não Funcionais
+
+| ID | Descrição | Prioridade |
+| -------- | ----------------------              | --------- |
+| RNF-01  |	O site deve ser publicado em um ambiente acessível publicamente na Internet (Repl.it, GitHub Pages, Heroku); | Alta  |
+| RNF-02  |	O site deverá ser responsivo permitindo a visualização em um celular de forma adequada   | Alta  |
+| RNF-03  |	O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge) | Alta |
+| RNF-04  |	O site deve ter bom nível de contraste entre os elementos da tela em conformidade    | Média |
+| RNF-05  |	O site deve ter uma interface do usuário intuitiva e fácil de usar, proporcionando uma experiência de usuário agradável e eficiente para pessoas com diferentes níveis de habilidade técnica.   | Média |
+| RNF-06  |	O código deve possibilitar uma fácil manutenção do sistema, garantindo que atualizações e correções de bugs possam ser implementadas de forma rápida e sem interrupções significativas no serviço. | Média |
+  
 - [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
+
+## Restrições 
+  
+| ID | Descrição |
+| -------- | ----------------------              | 
+| RE-01  |	O projeto deverá ser entregue no final do semestre letivo e as sprints devem ser feitas e entregues nos períodos designados a elas. | 
+| RE-02  |	O desenvolvimento da aplicação deve restringir as tecnologias utilizadas apenas as aprendidas em sala, como HTML, CSS, Bootstrap e JavaScript.   | 
+| RE-03  |	A equipe não pode subcontratar o desenvolvimento do trabalho ou terceirizar qualquer parte do trabalho.  | 
 
 Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
