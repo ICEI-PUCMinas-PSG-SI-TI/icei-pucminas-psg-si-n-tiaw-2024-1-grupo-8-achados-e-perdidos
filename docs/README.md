@@ -96,14 +96,11 @@ Fluxo de usuário (User Flow) foi criado pensando em facilitar para o usuario, c
 
 ## Wireframes
 
-Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
-
+O wireframe do site é um esboço visual que mostra a estrutura básica e o layout das páginas, permitindo uma compreensão clara da organização e funcionalidades do site.
 **Links Úteis**:
 
-- [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-- [Figma](https://www.figma.com/)
-- [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-- [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+- [ Wireframes](https://www.figma.com/file/yVosVg5piTvUuxNzJVHZLA/Untitled?type=design&mode=design&t=YpMQw3icjWZlvHiT-1)
+- [wireframe Prototipo](https://www.figma.com/proto/yVosVg5piTvUuxNzJVHZLA/Untitled?type=design&t=exi3ic2JdvVbaY7b-1&scaling=scale-down&page-id=0%3A1&node-id=3-52&starting-point-node-id=3%3A37&mode=design)
 
 ## Gerenciamento do Projeto
 
