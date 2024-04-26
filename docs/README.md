@@ -37,9 +37,15 @@ Com a adoção de uma plataforma digital, espera-se aumentar significativamente 
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+Perder itens é um problema que afeta todo mundo, diariamente esquecemos de itens importantes em transportes públicos, lojas, faculdades ou até mesmo dentro de nossa própria casa. Porém, o foco principal da solução apresentada é para estudantes com seus itens pessoais dentro de instituições de ensino, de médio ou superior, e modalidade presencial.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
+Estes estudantes estão numa fase da vida em que deixam de lidar apenas com problemas pessoais e estudantis e iniciam a vida adulta, trabalhar, ter mais compromissos:
+
+- Pessoas de no mínimo 16 anos.
+- Qualquer gênero.
+- Atuação em qualquer área.
+-	Morar no Brasil.
+-	Frequentam universidades presencialmente e podem acabar perdendo itens.
 
 
 ## Personas
