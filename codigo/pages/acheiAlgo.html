@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achei algo</title>
+    <link rel="stylesheet" href="../assets/css/acheiAlgo.css">
+</head>
+<body>
+    <main class="principal">
+        <form action="achados.html" id="cadastro_item">
+            <input type="text" name="item" placeholder="O que você encontrou" required class="item_input">
+            <label for="img_objeto">Coloque aqui a imagem do objeto</label>
+            <div name="img_objeto" class="form_upload_img">+</div>
+
+            <select id="select_instituicao" required class="item_input">
+                <option value="" disabled selected hidden>Instituição</option>
+            </select>
+
+            <input type="tel" name="contato" placeholder="Seu número de telefone" required class="item_input">
+            <input type="text" name="local" placeholder="Onde encontrou" required class="item_input">
+            <input type="submit" value="Cadastrar item" required class="botao_enviar">
+        </form>
+    </main>
+    <script src="../assets/js/acheiAlgo.js"></script>
+</body>
+</html>

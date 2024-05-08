@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do conteúdo principal */
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilização dos cards */
+.item {
+    text-align: center;
+    width: 50%;
+}

@@ -1,0 +1,1 @@
+/* JavaScript geral do projeto */

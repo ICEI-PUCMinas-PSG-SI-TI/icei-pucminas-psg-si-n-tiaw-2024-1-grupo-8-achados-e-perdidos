@@ -1,0 +1,65 @@
+{
+    "instituicoes": [
+        {
+          "id": 1,
+          "nome": "Instituição de Caridade XYZ",
+          "endereco": "Rua Principal, 123, Cidade Grande",
+          "link_img": "https://example.com/logo1.png",
+          "itens_perdidos": {
+            "id": 1,
+            "tags": ["casaco", "vermelho", "grande"],
+            "nome": "Casaco Vermelho Grande",
+            "descricao": "Um casaco vermelho grande perdido em uma das ruas próximas.",
+            "link_img": "https://example.com/item123.png",
+            "username_encontrou": "usuario123",
+            "encontrado": true,
+            "data_encontrado": "2024-05-01",
+            "data_devolvido": "2024-05-03",
+            "localizacao_encontrada": "Rua A, Cidade Grande"
+          },
+          "descricao": "Uma instituição dedicada a ajudar pessoas em situação de vulnerabilidade."
+        },
+        {
+          "id": 2,
+          "nome": "Instituição Beneficente ABC",
+          "endereco": "Avenida Central, 456, Cidade Pequena",
+          "link_img": "https://example.com/logo2.png",
+          "itens_perdidos": {
+            "id": 2,
+            "tags": ["mochila", "azul", "infantil"],
+            "nome": "Mochila Azul Infantil",
+            "descricao": "Uma mochila azul infantil perdida no parque local.",
+            "link_img": "https://example.com/item456.png",
+            "username_encontrou": null,
+            "encontrado": false,
+            "data_encontrado": null,
+            "data_devolvido": null,
+            "localizacao_encontrada": null
+          },
+          "descricao": "Uma instituição que fornece ajuda alimentar e assistência médica para famílias carentes."
+        },
+        {
+          "id": 3,
+          "nome": "Centro de Apoio aos Sem-teto",
+          "endereco": "Travessa da Esperança, 789, Cidade Nova",
+          "link_img": "https://example.com/logo3.png",
+          "itens_perdidos": [
+            {
+                "id": 3,
+                "tags": ["guarda-chuva", "preto"],
+                "nome": "Guarda-chuva Preto",
+                "descricao": "Um guarda-chuva preto perdido na estação de ônibus local.",
+                "link_img": "https://example.com/item789.png",
+                "username_encontrou": "usuario456",
+                "encontrado": true,
+                "data_encontrado": "2024-05-02",
+                "data_devolvido": "2024-05-04",
+                "localizacao_encontrada": "Estação de Ônibus, Cidade Nova"
+            }
+          ],
+          "descricao": "Um centro que oferece abrigo temporário e suporte social para pessoas sem-teto."
+        }
+      ],
+      "id_atual_instituicao": 2,
+      "id_atual_item": 3
+}
