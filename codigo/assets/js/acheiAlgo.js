@@ -26,16 +26,37 @@ function encontra_instituicao(id, req) {
 }
 
 function cadastra_item(req) {
-    // Variaveis que serão utilizadas
-    let nome = document.getElementById("nome_item").value;
-    let contato = document.getElementById("contato_item").value;
-    let local = document.getElementById("local_item").value;
     // Procura a instituição
     let instituicao = encontra_instituicao(document.getElementById("select_instituicao").value, req);
 
-    // Cria o novo objeto de item
-    let novo_item = {
-        id
+    // To-do: alerta cadastro errado
+    if(instituicao === null) {
+
+    } else {
+        // Variaveis que serão utilizadas
+        let nome = document.getElementById("nome_item").value;
+        let contato = document.getElementById("contato_item").value;
+        let local = document.getElementById("local_item").value;
+        let data_atual = new Date();
+
+        // Aumenta a quantidade de itens (para o registro do id)
+        req.qnt_item++;
+
+        // Cria o novo objeto de item
+        let novo_item = {
+            id: req.qnt_item,
+            tags: ["tag1", "tag2", "tag3"],
+            nome: `${nome}`,
+            descricao: "descrição Genérica",
+            contato: contato,
+            link_img: "https://exemplo.com.br",
+            username_encontrou: "Usuário exemplo",
+            encontrado: false,
+            data_encontrado: `${data_atual.getDate()}/${data_atual.getMonth() + 1}/${data_atual.getFullYear()}`,
+            data_devolvido: null,
+            localizacao_encontrado: local
+        }
+
     }
 }
 
@@ -59,6 +80,6 @@ requisicao.onload = function () {
 
     form_cadastro.addEventListener("submit", (event) => {
         event.preventDefault();
-        cadastra_item(resposta_requisicao, lista_input);
+        cadastra_item(resposta_requisicao);
     });
 };
