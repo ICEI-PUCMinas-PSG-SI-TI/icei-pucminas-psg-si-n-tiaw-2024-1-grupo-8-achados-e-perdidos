@@ -5,18 +5,20 @@
           "nome": "Instituição de Caridade XYZ",
           "endereco": "Rua Principal, 123, Cidade Grande",
           "link_img": "https://example.com/logo1.png",
-          "itens_perdidos": {
-            "id": 1,
-            "tags": ["casaco", "vermelho", "grande"],
-            "nome": "Casaco Vermelho Grande",
-            "descricao": "Um casaco vermelho grande perdido em uma das ruas próximas.",
-            "link_img": "https://example.com/item123.png",
-            "username_encontrou": "usuario123",
-            "encontrado": true,
-            "data_encontrado": "2024-05-01",
-            "data_devolvido": "2024-05-03",
-            "localizacao_encontrada": "Rua A, Cidade Grande"
-          },
+          "itens_perdidos": [
+            {
+              "id": 1,
+              "tags": ["casaco", "vermelho", "grande"],
+              "nome": "Casaco Vermelho Grande",
+              "descricao": "Um casaco vermelho grande perdido em uma das ruas próximas.",
+              "link_img": "https://example.com/item123.png",
+              "username_encontrou": "usuario123",
+              "encontrado": true,
+              "data_encontrado": "2024-05-01",
+              "data_devolvido": "2024-05-03",
+              "localizacao_encontrada": "Rua A, Cidade Grande"
+            }
+          ],
           "descricao": "Uma instituição dedicada a ajudar pessoas em situação de vulnerabilidade."
         },
         {
@@ -60,6 +62,6 @@
           "descricao": "Um centro que oferece abrigo temporário e suporte social para pessoas sem-teto."
         }
       ],
-      "id_atual_instituicao": 2,
-      "id_atual_item": 3
+      "qnt_instituicao": 3,
+      "qnt_item": 3
 }
