@@ -8,7 +8,7 @@
           "itens_perdidos": [
             {
               "id": 1,
-              "tags": ["casaco", "vermelho", "grande"],
+              "tag": "Casaco",
               "nome": "Casaco Vermelho Grande",
               "descricao": "Um casaco vermelho grande perdido em uma das ruas próximas.",
               "contato": "(31) 992479328",
@@ -27,19 +27,21 @@
           "nome": "Instituição Beneficente ABC",
           "endereco": "Avenida Central, 456, Cidade Pequena",
           "link_img": "https://example.com/logo2.png",
-          "itens_perdidos": {
-            "id": 2,
-            "tags": ["mochila", "azul", "infantil"],
-            "nome": "Mochila Azul Infantil",
-            "descricao": "Uma mochila azul infantil perdida no parque local.",
-            "contato": "(31) 992479328",
-            "link_img": "https://example.com/item456.png",
-            "username_encontrou": null,
-            "encontrado": false,
-            "data_encontrado": null,
-            "data_devolvido": null,
-            "localizacao_encontrado": null
-          },
+          "itens_perdidos": [
+            {
+              "id": 2,
+              "tag": "Mochila",
+              "nome": "Mochila Azul Infantil",
+              "descricao": "Uma mochila azul infantil perdida no parque local.",
+              "contato": "(31) 992479328",
+              "link_img": "https://example.com/item456.png",
+              "username_encontrou": null,
+              "encontrado": false,
+              "data_encontrado": null,
+              "data_devolvido": null,
+              "localizacao_encontrado": null
+            }
+          ],
           "descricao": "Uma instituição que fornece ajuda alimentar e assistência médica para famílias carentes."
         },
         {
@@ -50,7 +52,7 @@
           "itens_perdidos": [
             {
                 "id": 3,
-                "tags": ["guarda-chuva", "preto"],
+                "tag": "Objeto",
                 "nome": "Guarda-chuva Preto",
                 "descricao": "Um guarda-chuva preto perdido na estação de ônibus local.",
                 "contato": "(31) 992479328",

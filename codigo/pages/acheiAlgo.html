@@ -10,11 +10,16 @@
     <main class="principal">
         <form action="achados.html" id="cadastro_item">
             <input type="text" name="item" placeholder="O que você encontrou" required id="nome_item" class="item_input">
+            <input type="text" name="item" placeholder="Descrição" required id="desc_item" class="item_input">
             <label for="img_objeto">Coloque aqui a imagem do objeto</label>
             <div name="img_objeto" class="form_upload_img">+</div>
 
             <select id="select_instituicao" required class="item_input">
                 <option value="" disabled selected hidden>Instituição</option>
+            </select>
+
+            <select id="select_tag" required class="item_input">
+                <option value="" disabled selected hidden>Tag do item</option>
             </select>
 
             <input type="tel" name="contato" placeholder="Seu número de telefone" required id="contato_item" class="item_input">
