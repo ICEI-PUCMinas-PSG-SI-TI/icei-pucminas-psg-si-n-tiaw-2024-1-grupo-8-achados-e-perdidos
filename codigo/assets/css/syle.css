@@ -1,1 +1,33 @@
 /* Arquivo destinado a estilizações gerais */
+.icon {
+ width: 30px;
+ height: 30px;
+}
+
+.mini-icon {
+ width: 15px;
+ height: 15px;
+ box-sizing: content-box;
+}
+
+.card-instituicao {
+ max-width: 300px;
+}
+.item_img {
+ width: 100%;
+}
+.fs-5 {
+ color: rgb(66, 66, 66); 
+ font-size: 0.8rem;
+ margin-bottom: 0;
+}
+
+.card-instituicao {
+ background-color: rgba(38, 255, 219, 0.2);
+ border-radius: .8rem !important; 
+ transition: transform 0.1s ease-in-out; 
+}
+
+.card-instituicao:hover {
+  transform: scale(1.05);
+}
