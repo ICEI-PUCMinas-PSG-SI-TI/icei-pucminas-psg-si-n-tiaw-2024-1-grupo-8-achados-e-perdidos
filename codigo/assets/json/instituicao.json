@@ -2,8 +2,10 @@
     "instituicoes": [
         {
           "id": 1,
-          "nome": "Instituição de Caridade XYZ",
-          "endereco": "Rua Principal, 123, Cidade Grande",
+          "nome": "PUC Minas - São Gabriel",
+          "endereco": "Rua Walter Ianni, 255 - São Gabriel",
+          "cidade": "Belo Horizonte",
+          "descricao": "Uma instituição dedicada a ajudar pessoas em situação de vulnerabilidade.",
           "link_img": "https://lazuliarquitetura.com.br/2020/wp-content/uploads/brizy/imgs/Auditorio-Puc-Sao-Gabriel-Lazuli-Arquitetura-1-scaled-582x436x3x0x576x436x1587693222.jpg",
           "itens_perdidos": [
             {
@@ -19,8 +21,7 @@
               "data_devolvido": "2024-05-03",
               "localizacao_encontrado": "Rua A, Cidade Grande"
             }
-          ],
-          "descricao": "Uma instituição dedicada a ajudar pessoas em situação de vulnerabilidade."
+          ]
         },
         {
           "id": 2,

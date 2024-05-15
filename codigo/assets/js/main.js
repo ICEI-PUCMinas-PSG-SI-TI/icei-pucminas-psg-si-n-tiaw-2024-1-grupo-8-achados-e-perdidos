@@ -4,10 +4,11 @@ import {carregarJSON} from "./modules/json.js";
 let instituicoes = await carregarJSON('./assets/json/instituicao.json')
 let instituicoesEl = document.getElementById('instituicoes')
 
-instituicoesEl.innerHTML = []
+if(instituicoes.instituicoes != undefined && instituicoes.instituicoes.length > 0)
+  instituicoesEl.innerHTML = ''
 
-instituicoes.instituicoes.forEach(el => {
-  instituicoes.innerHTML += `
+instituicoes.instituicoes.map((el, index) => {
+  instituicoesEl.innerHTML += `
     <div class="col d-flex justify-content-center">
     <div class="card card-instituicao" href="instituicao.html">
       <div class="card-body">
@@ -15,9 +16,9 @@ instituicoes.instituicoes.forEach(el => {
           src="${el.link_img}"
           class="item_img" alt="imagem do item perido">
         <div>
-          <div class="card-title text-center w-100">${el.link_img}</div>
-          <p class="fs-5 endereco text-start">Rua Walter Ianni, 255</p>
-          <p class="fs-5 bairro-cidade">São Gabriel, Belo Horizonte - MG, 31980-110</p>
+          <div class="card-title text-center w-100">${el.nome}</div>
+          <p class="fs-5 endereco text-start">${el.endereco}</p>
+          <p class="fs-5 bairro-cidade">${el.cidade}</p>
         </div>
       </div>
     </div>
