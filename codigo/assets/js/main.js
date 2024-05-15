@@ -8,9 +8,12 @@ if(instituicoes.instituicoes != undefined && instituicoes.instituicoes.length > 
   instituicoesEl.innerHTML = ''
 
 instituicoes.instituicoes.map((el, index) => {
+  instituicoesEl.addEventListener('click', (el) => {
+    window.location.href = 'http://localhost:8080/codigo/pages/itensPerdidos.html?id='+el.id // Será para um item perdido
+  })
   instituicoesEl.innerHTML += `
     <div class="col d-flex justify-content-center">
-    <div class="card card-instituicao" href="instituicao.html">
+    <div class="card card-instituicao" href="instituicao.html" id="instituicao-${el.id}">
       <div class="card-body">
         <img
           src="${el.link_img}"
