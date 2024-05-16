@@ -47,6 +47,7 @@
 
 #img_uploaded {
     height: 100%;
+    max-width: 100%;
 }
 
 #select_instituicao, #select_tag {

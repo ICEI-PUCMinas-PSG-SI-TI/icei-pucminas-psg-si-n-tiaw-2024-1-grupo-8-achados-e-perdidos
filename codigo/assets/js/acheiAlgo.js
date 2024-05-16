@@ -8,10 +8,10 @@ function preenche_select(id, nome, select) {
 }
 
 
-function encontra_instituicao(id, req) {
-    for (let i = 0; i < req.length; i++) {
-        if (req[i].id == id) {
-            return req[i];
+function encontra_instituicao(id, intituicoes) {
+    for (let i = 0; i < intituicoes.length; i++) {
+        if (intituicoes[i].id == id) {
+            return intituicoes[i];
         }
     }
     // Caso não encontre a instituicao
@@ -19,14 +19,13 @@ function encontra_instituicao(id, req) {
 }
 
 
-function cadastra_item(req) {
+function cadastra_item(intituicoes) {
     // Procura a instituição
     let id_instituicao =document.getElementById("select_instituicao").value;
-    let instituicao = encontra_instituicao(id_instituicao, req);
+    let instituicao = encontra_instituicao(id_instituicao, intituicoes);
 
     // To-do: alerta cadastro errado
     if(instituicao === null) {
-
 
     } else {
         // Variaveis que serão utilizadas
@@ -38,30 +37,43 @@ function cadastra_item(req) {
         let data_atual = new Date();
 
         // Aumenta a quantidade de itens (para o registro do id)
-       
+        let meta_req = new XMLHttpRequest();
+        meta_req.open("GET", caminho_JSON + "meta/");
+        meta_req.send();
 
-        // Cria o novo objeto de item
-        let novo_item = {
-            id: req.qnt_item,
-            tag: `${tag}`,
-            nome: `${nome}`,
-            descricao: `${descricao}`,
-            contato: contato,
-            link_img: link_img,
-            username_encontrou: "Usuário exemplo",
-            encontrado: false,
-            data_encontrado: `${data_atual.getDate()}/${data_atual.getMonth() + 1}/${data_atual.getFullYear()}`,
-            data_devolvido: null,
-            localizacao_encontrado: local
+        meta_req.onload = function () {
+            let meta = JSON.parse(meta_req.response);
+            meta.qnt_item++;
+
+            // Cria o novo objeto de item
+            let novo_item = {
+                id: meta.qnt_item,
+                tag: `${tag}`,
+                nome: `${nome}`,
+                descricao: `${descricao}`,
+                contato: contato,
+                link_img: link_img,
+                username_encontrou: "Usuário exemplo",
+                encontrado: false,
+                data_encontrado: `${data_atual.getDate()}/${data_atual.getMonth() + 1}/${data_atual.getFullYear()}`,
+                data_devolvido: null,
+                localizacao_encontrado: local
+            }
+            
+            instituicao.itens_perdidos.push(novo_item);
+
+            // Escreve no arquivo json
+            let req_put_instituicao = new XMLHttpRequest();
+            req_put_instituicao.open("PUT", caminho_JSON + `instituicoes/${id_instituicao}`);
+            req_put_instituicao.setRequestHeader("Content-Type", "application/json");
+            req_put_instituicao.send(JSON.stringify(instituicao));
+
+            // escreve no arquivo meta
+            let req_put_meta = new XMLHttpRequest();
+            req_put_meta.open("PUT", caminho_JSON + "meta");
+            req_put_meta.setRequestHeader("Content-Type", "application/json");
+            req_put_meta.send(JSON.stringify(meta));
         }
-        
-        instituicao.itens_perdidos.push(novo_item);
-
-        // Escreve no arquivo json
-        let nova_req = new XMLHttpRequest();
-        nova_req.open("PUT", caminho_JSON + `instituicoes/${id_instituicao}`);
-        nova_req.setRequestHeader("Content-Type", "application/json");
-        nova_req.send(JSON.stringify(instituicao));
     }
 }
 
@@ -91,7 +103,6 @@ div_img.addEventListener("click", () => {
         
         // Para saber se o link é válido
         img.src = link_img;
-        console.log(link_img);
         img.onload = function() {
             div_img.innerHTML = `<img src="${link_img}" id="img_uploaded" alt="Imagem não carregou">`;
             document.getElementById("img_uploaded").src = link_img;
