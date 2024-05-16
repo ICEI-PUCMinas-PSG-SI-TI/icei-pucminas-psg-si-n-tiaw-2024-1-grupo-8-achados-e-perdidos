@@ -1,27 +1,32 @@
 /* Arquivo de Javascript da página de cadastro de um item */
 
+
 /* ----------- Funções ----------- */
 function preenche_select(id, nome, select) {
     let text = `<option value="${id}">${nome}</option>`;
     select.innerHTML += text;
 }
 
+
 function encontra_instituicao(id, req) {
-    for (let i = 0; i < req.instituicoes.length; i++) {
-        if (req.instituicoes[i].id == id) {
-            return req.instituicoes[i];
+    for (let i = 0; i < req.length; i++) {
+        if (req[i].id == id) {
+            return req[i];
         }
     }
     // Caso não encontre a instituicao
     return null;
 }
 
+
 function cadastra_item(req) {
     // Procura a instituição
-    let instituicao = encontra_instituicao(document.getElementById("select_instituicao").value, req);
+    let id_instituicao =document.getElementById("select_instituicao").value;
+    let instituicao = encontra_instituicao(id_instituicao, req);
 
     // To-do: alerta cadastro errado
     if(instituicao === null) {
+
 
     } else {
         // Variaveis que serão utilizadas
@@ -33,7 +38,7 @@ function cadastra_item(req) {
         let data_atual = new Date();
 
         // Aumenta a quantidade de itens (para o registro do id)
-        req.qnt_item++;
+       
 
         // Cria o novo objeto de item
         let novo_item = {
@@ -42,7 +47,7 @@ function cadastra_item(req) {
             nome: `${nome}`,
             descricao: `${descricao}`,
             contato: contato,
-            link_img: "https://exemplo.com.br",
+            link_img: link_img,
             username_encontrou: "Usuário exemplo",
             encontrado: false,
             data_encontrado: `${data_atual.getDate()}/${data_atual.getMonth() + 1}/${data_atual.getFullYear()}`,
@@ -52,19 +57,21 @@ function cadastra_item(req) {
         
         instituicao.itens_perdidos.push(novo_item);
         // Escreve no arquivo json
-        /*
+
         let nova_req = new XMLHttpRequest();
-        nova_req.open("POST", caminho_JSON);
-        nova_req.send(JSON.stringify(req));
-        */
+        nova_req.open("POST", caminho_JSON + "instituicoes?id=1");
+        nova_req.send(novo_item);
     }
 }
 
 // Declara variaveis
 var form_cadastro = document.getElementById("cadastro_item");
 var lista_input = document.getElementsByClassName("item_input");
-const caminho_JSON = "../assets/json/instituicao.json";
+var div_img = document.getElementsByClassName("form_upload_img")[0];
+var link_preenchido = false;
+const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 var requisicao = new XMLHttpRequest();
+var link_img = null;
 var tipo_tags = [
     "Eletrônico",
     "Camisa",
@@ -75,8 +82,29 @@ var tipo_tags = [
     "Outro"
 ]
 
+// Esse trecho de código implementa a função do input de imagem 
+div_img.addEventListener("click", () => {
+    link_img = prompt("Digite o link da imagem:").trim();
+    if(link_img !== null) {
+        var img = new Image();
+        
+        // Para saber se o link é válido
+        img.src = link_img;
+        console.log(link_img);
+        img.onload = function() {
+            div_img.innerHTML = `<img src="${link_img}" id="img_uploaded" alt="Imagem não carregou">`;
+            document.getElementById("img_uploaded").src = link_img;
+            link_preenchido = true;
+        };
+        img.onerror = function() {
+            alert("Link incorreto");
+            link_preenchido = false;
+        };
+    }
+});
+
 // Leitura dos dados do json
-requisicao.open("GET", caminho_JSON);
+requisicao.open("GET", caminho_JSON + "instituicoes");
 requisicao.responseType = "json";
 requisicao.send();
 
@@ -85,7 +113,7 @@ requisicao.onload = function () {
 
     // Preenche o select de instituições
     let select_instituicao = document.getElementById("select_instituicao");
-    resposta_requisicao.instituicoes.forEach(element => {
+    resposta_requisicao.forEach(element => {
         preenche_select(element.id, element.nome, select_instituicao);
     });
 
@@ -97,6 +125,10 @@ requisicao.onload = function () {
 
     form_cadastro.addEventListener("submit", (event) => {
         event.preventDefault();
-        cadastra_item(resposta_requisicao);
+        if(link_preenchido) {
+            cadastra_item(resposta_requisicao);
+        } else {
+            alert("O link da imagem está vazio ou não é valido");
+        }
     });
 };
