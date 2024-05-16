@@ -56,11 +56,12 @@ function cadastra_item(req) {
         }
         
         instituicao.itens_perdidos.push(novo_item);
-        // Escreve no arquivo json
 
+        // Escreve no arquivo json
         let nova_req = new XMLHttpRequest();
-        nova_req.open("POST", caminho_JSON + "instituicoes?id=1");
-        nova_req.send(novo_item);
+        nova_req.open("PUT", caminho_JSON + `instituicoes/${id_instituicao}`);
+        nova_req.setRequestHeader("Content-Type", "application/json");
+        nova_req.send(JSON.stringify(instituicao));
     }
 }
 
@@ -84,7 +85,7 @@ var tipo_tags = [
 
 // Esse trecho de código implementa a função do input de imagem 
 div_img.addEventListener("click", () => {
-    link_img = prompt("Digite o link da imagem:").trim();
+    link_img = prompt("Digite o link da imagem:");
     if(link_img !== null) {
         var img = new Image();
         
