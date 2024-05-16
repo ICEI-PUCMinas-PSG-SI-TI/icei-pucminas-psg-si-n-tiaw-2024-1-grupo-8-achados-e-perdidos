@@ -1,4 +1,9 @@
 /* Arquivo destinado a estilizações gerais */
+* {
+   color: #555;
+   font-family: 'Montserrat', sans-serif;
+}
+
 .icon {
  width: 30px;
  height: 30px;
@@ -10,8 +15,9 @@
  box-sizing: content-box;
 }
 
-.card-instituicao {
+#instituicoes .col {
  max-width: 300px;
+ min-width: 200px;
 }
 .item_img {
  width: 100%;
@@ -30,4 +36,6 @@
 
 .card-instituicao:hover {
   transform: scale(1.05);
+}
+.rounded-bottom {
 }
