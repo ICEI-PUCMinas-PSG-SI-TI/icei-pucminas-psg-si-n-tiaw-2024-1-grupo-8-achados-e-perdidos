@@ -26,32 +26,32 @@ function setRequisicaoState(req) {
 }
 
 // Recebe caminho da requisição e um valor no formato de objeto
-function putJSON(caminho, data) {
-  let req = new XMLHttpRequest();
-  req.open("PUT", caminho);
-  req = setRequisicaoState(req);
-  req.setRequestHeader("Content-Type", "application/json");
-  req.send(JSON.stringify(data));
-}
+async function putJSON(caminho, data) {
+  try {
+    let response = await fetch(caminho, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: data
+    })
 
-// Recebe caminho da requisição e um valor no formato de objeto
-function postJSON(caminho, data) {
-  let req = new XMLHttpRequest();
-  req.open("POST", caminho);
-  req = setRequisicaoState(req);
-  req.setRequestHeader("Content-Type", "application/json");
-  req.send(JSON.stringify(data));
+    if(!response.ok)
+      throw new Error(response.statusText);
+  } catch(error){
+    throw new Error('Erro ao fazer PUT: '+error);
+  }
+
+  return true;
+
 }
 
 // Recebe o caminho da requisição e retorna o json no formato de objeto
 async function getJSON(caminho) {
-  let req = new XMLHttpRequest();
-  req.open("GET", caminho);
-  req = setRequisicaoState(req);
-  req.send();
-  req.onload = await function() {
-    return req.response;
+  let response = await fetch(caminho);
+  if (!response.ok) {
+    throw new Error('Network response was not ok ' + response.statusText);
   }
+  let data = await response.json();
+  return data;
 }
 
-export {carregarJSON, putJSON, getJSON, postJSON}
+export {carregarJSON, putJSON, getJSON}

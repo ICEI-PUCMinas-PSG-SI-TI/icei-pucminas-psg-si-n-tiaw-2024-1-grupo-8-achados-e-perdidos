@@ -64,7 +64,7 @@ function cadastra_item(intituicoes) {
                 descricao: `${descricao}`,
                 contato: contato,
                 link_img: link_img,
-                username_encontrou: "Usuário exemplo",
+                cpf_encontrou: "12345678901",
                 encontrado: false,
                 data_encontrado: `${data_atual.getDate()}/${data_atual.getMonth() + 1}/${data_atual.getFullYear()}`,
                 data_devolvido: null,
@@ -73,23 +73,20 @@ function cadastra_item(intituicoes) {
             
             instituicao.itens_perdidos.push(novo_item);
 
-            // Escreve no arquivo json
-            let req_put_instituicao = new XMLHttpRequest();
-            req_put_instituicao.open("PUT", caminho_JSON + `instituicoes/${id_instituicao}`);
-            req_put_instituicao.setRequestHeader("Content-Type", "application/json");
-            req_put_instituicao.send(JSON.stringify(instituicao));
-
-            // escreve no arquivo meta
-            let req_put_meta = new XMLHttpRequest();
-            req_put_meta.open("PUT", caminho_JSON + "meta");
-            req_put_meta.setRequestHeader("Content-Type", "application/json");
-            req_put_meta.send(JSON.stringify(meta));
+            try{
+                // Escreve no arquivo json
+                putJSON(caminho_JSON + `instituicoes/${id_instituicao}`, JSON.stringify(instituicao))
+                // escreve no arquivo meta
+                putJSON(caminho_JSON + "meta", JSON.stringify(meta))
+            }catch(e){
+                console.log('Erro ao salvar novo item')
+            }
         }
     }
 }
 /* ----------- Funções fim ----------- */
 
-function main() {
+async function main() {
     // Declara variaveis
     var form_cadastro = document.getElementById("cadastro_item");
     var lista_input = document.getElementsByClassName("item_input");
@@ -116,14 +113,9 @@ function main() {
         }
     });
 
-    // Leitura dos dados do json
-    requisicao.open("GET", caminho_JSON + "instituicoes");
-    requisicao.responseType = "json";
-    requisicao.send();
-
-    requisicao.onload = function () {
-        let resposta_requisicao = requisicao.response;
-
+    try{
+        // Leitura dos dados do json
+        let resposta_requisicao = await getJSON(caminho_JSON+"instituicoes");
         // Preenche o select de instituições
         let select_instituicao = document.getElementById("select_instituicao");
         resposta_requisicao.forEach(element => {
@@ -144,7 +136,9 @@ function main() {
                 alert("O link da imagem está vazio ou não é valido");
             }
         });
-    };
+        } catch(e) {
+        console.log("Problema ao efetuar requisição: " + e);
+        }
 }
 
 main();

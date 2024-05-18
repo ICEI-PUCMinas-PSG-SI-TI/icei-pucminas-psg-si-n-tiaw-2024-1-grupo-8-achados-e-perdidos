@@ -1,7 +1,10 @@
 /* JavaScript geral do projeto */
-import { carregarJSON } from "./modules/json.js";
+import { getJSON } from "./modules/json.js";
 
-let json = await carregarJSON('./assets/json/instituicao.json')
+const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
+
+
+let json = await getJSON(caminho_JSON+"instituicoes")
 let instituicoesEl = document.getElementById('instituicoes')
 
 /**
@@ -11,13 +14,13 @@ Inicializar()
 
 function Inicializar() {
   // Verifica se encontrou instituições
-  if (json.instituicoes != undefined && json.instituicoes.length > 0)
+  if (json != undefined && json.length > 0)
     instituicoesEl.innerHTML = ''
   else
     alert('Não foram encontrados instituições!')
 
   // Preenche o HTML com os conteúdos do banco
-  json.instituicoes.map((el, index) => {
+  json.map((el, index) => {
     instituicoesEl.innerHTML += 
       `<div class="col mb-3 d-flex justify-content-center">
         <div class="card card-instituicao" href="instituicao.html" id="instituicao-${el.id}">
@@ -34,7 +37,7 @@ function Inicializar() {
         </div>
       </div>`
     // Redireciona para um item ID
-    instituicoesEl.children[0].addEventListener('click', (el) => {
+    instituicoesEl.children[0].addEventListener('click', (i) => {
       window.location.href = './pages/itensPerdidos.html?id=' + el.id
     })
   });
