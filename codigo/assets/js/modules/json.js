@@ -14,15 +14,15 @@ async function carregarJSON(caminhoArquivo) {
 // Função que define o onreadystatechange de uma requisição para capturar erros
 function setRequisicaoState(req) {
   req.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            console.log('Resposta recebida:', xhr.responseText);
+    if (req.readyState === 4) {
+        if (req.status >= 200 && req.status < 300) {
+            console.log("Requisição ocorreu corretamente")
         } else {
-            console.error('Erro na requisição:', xhr.status, xhr.statusText);
+            console.error('Erro na requisição:', req.status, req.statusText);
         }
     }
-    return req;
-};
+  };
+  return req;
 }
 
 // Recebe caminho da requisição e um valor no formato de objeto
@@ -44,13 +44,13 @@ function postJSON(caminho, data) {
 }
 
 // Recebe o caminho da requisição e retorna o json no formato de objeto
-function getJSON(caminho) {
+async function getJSON(caminho) {
   let req = new XMLHttpRequest();
   req.open("GET", caminho);
   req = setRequisicaoState(req);
   req.send();
-  req.onload = function() {
-    return JSON.parse(req.response);
+  req.onload = await function() {
+    return req.response;
   }
 }
 

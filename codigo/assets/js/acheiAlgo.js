@@ -1,6 +1,18 @@
 /* Arquivo de Javascript da página de cadastro de um item */
-//import {putJSON, getJSON} from "./modules/json.js";
+import {putJSON, getJSON} from "./modules/json.js";
 
+var link_preenchido = false;
+var link_img = null;
+var tipo_tags = [
+    "Eletrônico",
+    "Camisa",
+    "Calça",
+    "Acessório",
+    "Livro",
+    "Caderno",
+    "Outro"
+]
+const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 
 /* ----------- Funções inicio ----------- */
 function preenche_select(id, nome, select) {
@@ -82,19 +94,7 @@ function main() {
     var form_cadastro = document.getElementById("cadastro_item");
     var lista_input = document.getElementsByClassName("item_input");
     var div_img = document.getElementsByClassName("form_upload_img")[0];
-    var link_preenchido = false;
-    const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
     var requisicao = new XMLHttpRequest();
-    var link_img = null;
-    var tipo_tags = [
-        "Eletrônico",
-        "Camisa",
-        "Calça",
-        "Acessório",
-        "Livro",
-        "Caderno",
-        "Outro"
-    ]
 
     // Esse trecho de código implementa a função do input de imagem 
     div_img.addEventListener("click", () => {
