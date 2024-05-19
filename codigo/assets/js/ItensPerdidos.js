@@ -48,7 +48,7 @@ function mostrarItensPerdidos(data, idInstituicao) {
           instituicoesTable.forEach(child => {
               child.addEventListener('click', (e) => {
                   let itemId = child.id.replace('instituicao-', ''); // Remove o prefixo 'instituicao-'
-                  window.location.href = "detalhamentossobreitem.html?id=" + itemId + "?id=" + 23;
+                  window.location.href = "detalhamentossobreitem.html?ItemId=" + itemId + "?InstiId=" + idInstituicao;
               });
           });
         } else {
