@@ -9,11 +9,7 @@ const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8w
 let dadosJson = await getJSON(caminho_JSON+"instituicoes");
 let cardsEl = document.getElementById('cards');
 
-
-
-
-
-      // Função para obter os parâmetros da URL
+// Função para obter os parâmetros da URL
 function obterParametroComoInt(parametroNome) {
         let parametrosURL = new URLSearchParams(window.location.search);
         let valorParametro = parametrosURL.get(parametroNome);
@@ -22,6 +18,7 @@ function obterParametroComoInt(parametroNome) {
 
       // Função para mostrar os itens perdidos da instituição selecionada
 function mostrarItensPerdidos(data, idInstituicao) {
+
         let instituicao = data.find(inst => inst.id === idInstituicao);
         if (instituicao) {
           let saida = "";
@@ -36,7 +33,7 @@ function mostrarItensPerdidos(data, idInstituicao) {
                 <div class="">
                   <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 ">${item.nome}</div>
                   <p class="fs-5 endereco text-start">${item.descricao}</p>
-                  <p class="fs-5 bairro-cidade">${item.cidade}</p>
+
                 </div>
               </div>
             </div>
@@ -58,9 +55,8 @@ function mostrarItensPerdidos(data, idInstituicao) {
 
       // Obtém o ID da instituição da URL e mostra os itens perdidos correspondentes
 let idInstituicao = obterParametroComoInt('id');
-if (idInstituicao !== null) {
+
 
         mostrarItensPerdidos(dadosJson, idInstituicao);
 
-    }
 
