@@ -1,7 +1,7 @@
 /* JavaScript geral do projeto */
 import { getJSON } from "./modules/json.js";
 
-const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
+const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
 
 
 const json = await getJSON(caminho_JSON+"instituicoes")

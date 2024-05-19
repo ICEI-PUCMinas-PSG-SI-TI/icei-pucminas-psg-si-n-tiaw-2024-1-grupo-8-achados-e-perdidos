@@ -1,42 +1,60 @@
-// Verificar se os dados já estão armazenados no localStorage
-var storedData = localStorage.getItem('storedData');
+import { getJSON } from "./modules/json.js";
 
-// Se os dados não estiverem armazenados, fazer a requisição HTTP
+const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
 
-  let http = new XMLHttpRequest();
-  http.open('get', '../assets/json/instituicao.json', true);
-  http.send();
 
-  http.onload = function(){
-    if(this.readyState == 4 && this.status == 200){
-      // Armazenar os dados no localStorage como uma string JSON
-      localStorage.setItem('storedData', this.responseText);
 
-      // Chamar a função para criar os cards com os dados carregados
-      criarCards(JSON.parse(this.responseText).instituicoes);
+let dadosJson = await getJSON(caminho_JSON+"instituicoes");
+let cardsEl = document.getElementById('cards');
+
+
+
+
+
+
+      // Função para obter os parâmetros da URL
+function obterParametroComoInt(parametroNome) {
+        let parametrosURL = new URLSearchParams(window.location.search);
+        let valorParametro = parametrosURL.get(parametroNome);
+        return valorParametro !== null ? parseInt(valorParametro, 10) : null;
+      }
+
+      // Função para mostrar os itens perdidos da instituição selecionada
+function mostrarItensPerdidos(data, idInstituicao) {
+        let instituicao = data.find(inst => inst.id === idInstituicao);
+        if (instituicao) {
+          let saida = "";
+          for (let item of instituicao.itens_perdidos) {
+            saida += 
+            `<div class="col mb-3 d-flex justify-content-center">
+            <div class="card card-instituicao" href="instituicao.html" id="instituicao-${item.id}">
+              <div class="card-body">
+                <img
+                  src="${item.link_img}"
+                  class="item_img" alt="imagem do item perido">
+                <div class="">
+                  <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 ">${item.nome}</div>
+                  <p class="fs-5 endereco text-start">${item.descricao}</p>
+                  <p class="fs-5 bairro-cidade">${item.cidade}</p>
+                </div>
+              </div>
+            </div>
+          </div>`;
+          }
+          cardsEl.innerHTML = saida;
+          instituicoesEl.children[0].addEventListener('click', (i) => {
+            window.location.href = './pages/itensPerdidos.html?id=' + item.id
+          })
+        } else {
+          cardsEl.innerHTML = `<p>Instituição não encontrada</p>`;
+        }
+      }
+
+      // Obtém o ID da instituição da URL e mostra os itens perdidos correspondentes
+let idInstituicao = obterParametroComoInt('id');
+if (idInstituicao !== null) {
+
+        mostrarItensPerdidos(dadosJson, idInstituicao);
+
     }
-  }
 
-  // Se os dados estiverem armazenados, chamar a função para criar os cards diretamente
-  criarCards(JSON.parse(storedData).instituicoes);
-
-// Função para criar os cards com os dados do JSON
-function criarCards(data) {
-  var output = "";
-
-  for(let instituicao of data){
-    for(let item of instituicao.itens_perdidos){
-      output += `
-        <a href="">
-          <div class="product"> 
-            <img src="${item.link_img}" alt="${item.descricao}">
-            <p class="title">${item.nome}</p>  
-            <p class="description">${item.descricao}</p>
-            <input type="checkbox" id="" disabled checked>
-          </div>
-        </a>
-      `;
-    }
-  }
-  document.getElementById('cards').innerHTML = output;
-}

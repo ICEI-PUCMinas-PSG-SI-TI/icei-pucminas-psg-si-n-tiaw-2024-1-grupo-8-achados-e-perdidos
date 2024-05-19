@@ -1,19 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../assets/css/itensPerdidos.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  	<link rel="stylesheet" href="../assets/css/syle.css" >
+
 	<title>Achados</title>
 
 </head>
 <body>
 
-	<div id="cards" class="products" > 
-
+	<div class="container mt-5">
+		<div id="cards" class="row align-itens-center justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+		  <div class="justify-content-center d-flex flex-column">
+			<img class="align-self-center" src="https://i.gifer.com/ZKZg.gif" alt="loading" width="300px">
+			<h1>Buscando banco de dados...</h1>
+			<div class="col"> Verifique se a aplicação está rodando em um servidor <br>https://replit.com/@Danilohr/achados-e-perdidos</div>
+		  </div>
+		</div>
 	</div>
 
-	<script src="../assets/js/ItensPerdidos.js"></script>
+
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script type="module" src="../assets/js/modules/json.js"></script>
+  <script type="module" src="../assets/js/ItensPerdidos.js"></script>
 
 </body>
 </html>
