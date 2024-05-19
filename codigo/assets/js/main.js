@@ -4,7 +4,7 @@ import { getJSON } from "./modules/json.js";
 const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 
 
-let json = await getJSON(caminho_JSON+"instituicoes")
+const json = await getJSON(caminho_JSON+"instituicoes")
 let instituicoesEl = document.getElementById('instituicoes')
 
 /**
@@ -23,7 +23,7 @@ function Inicializar() {
   json.map((el, index) => {
     instituicoesEl.innerHTML += 
       `<div class="col mb-3 d-flex justify-content-center">
-        <div class="card card-instituicao" href="instituicao.html" id="instituicao-${el.id}">
+        <div class="card card-instituicao" href="instituicao.html" id="${el.id}">
           <div class="card-body">
             <img
               src="${el.link_img}"
@@ -36,9 +36,13 @@ function Inicializar() {
           </div>
         </div>
       </div>`
-    // Redireciona para um item ID
-    instituicoesEl.children[0].addEventListener('click', (i) => {
-      window.location.href = './pages/itensPerdidos.html?id=' + el.id
-    })
   });
+
+  let instituicoesTable = document.querySelectorAll('.card-instituicao')
+  // Redireciona para um item ID
+  instituicoesTable.forEach(child => {
+    child.addEventListener('click', (e) => {
+      window.location.href = "./pages/itensPerdidos.html/" + child.id;
+    })
+  })
 }
