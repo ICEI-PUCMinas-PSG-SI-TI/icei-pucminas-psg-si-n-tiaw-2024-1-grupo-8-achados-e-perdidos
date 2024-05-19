@@ -8,7 +8,7 @@ function aparecerTela (){
     window.open(novaTelaURL, '_blank');
 }
 
-/* var json = {
+var json = {
    itens_perdidos: [
    {
      "id": 1,
@@ -24,7 +24,7 @@ function aparecerTela (){
      "localizacao_encontrado": "Rua A, Cidade Grande"
    }
  ]
-} */
+} 
 
 var itensPerdidosDiv = document.getElementById('itensPerdidos');
 
@@ -41,13 +41,3 @@ var itensPerdidosDiv = document.getElementById('itensPerdidos');
         `;
         itensPerdidosDiv.appendChild(itemDiv);
 });
-
-//nav bar
-
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.nav-links');
-
-burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-});
-
