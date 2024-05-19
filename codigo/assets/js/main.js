@@ -1,12 +1,21 @@
 /* JavaScript geral do projeto */
 import { getJSON } from "./modules/json.js";
+
+
 // se não estiver aberto substituir link por: https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/, https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/
 // ou link propio que pode ser criado dando um fork e iniciando o servidor (usando replit)
 //mude em ItensPerdidos.js, Main.js e detalhes.js
-const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
+// const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
 
-
+const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 const json = await getJSON(caminho_JSON+"instituicoes")
+
+// Localhost
+// const caminho_JSON = "http://localhost:8080/codigo/assets/json/instituicao.json";
+// let json = await getJSON(caminho_JSON)
+// json = json.instituicoes
+
+
 let instituicoesEl = document.getElementById('instituicoes')
 
 /**
@@ -48,3 +57,11 @@ function Inicializar() {
     })
   })
 }
+
+//nav bar
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});

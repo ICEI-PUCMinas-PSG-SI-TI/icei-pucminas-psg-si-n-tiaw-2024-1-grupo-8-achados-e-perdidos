@@ -1,41 +1,121 @@
 /* Arquivo destinado a estilizações gerais */
 * {
-   color: #555;
-   font-family: 'Montserrat', sans-serif;
+  color: #555;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .icon {
- width: 30px;
- height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .mini-icon {
- width: 15px;
- height: 15px;
- box-sizing: content-box;
+  width: 15px;
+  height: 15px;
+  box-sizing: content-box;
 }
 
 #instituicoes .col {
- max-width: 300px;
- min-width: 200px;
+  max-width: 300px;
+  min-width: 200px;
 }
+
 .item_img {
- width: 100%;
+  width: 100%;
 }
+
 .fs-5 {
- color: rgb(66, 66, 66); 
- font-size: 0.8rem;
- margin-bottom: 0;
+  color: rgb(66, 66, 66);
+  font-size: 0.8rem;
+  margin-bottom: 0;
 }
 
 .card-instituicao {
- background-color: rgba(38, 255, 219, 0.2);
- border-radius: .8rem !important; 
- transition: transform 0.1s ease-in-out; 
+  background-color: rgba(38, 255, 219, 0.2);
+  border-radius: .8rem !important;
+  transition: transform 0.1s ease-in-out;
 }
 
 .card-instituicao:hover {
   transform: scale(1.05);
 }
-.rounded-bottom {
+
+.navbar {
+  background-color: #c9f4f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  top: 0;
+  width: 100%;
+}
+
+.logo img {
+  height: 70px;
+  width: 80px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #c59543;
+  font-weight: bold;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 21px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #c59543;
+  border-radius: 10px;
+  margin-right: 9px;
+
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    /* position: absolute; */
+    top: 60px;
+    left: 0;
+    background-color: #c9f4f8;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+.nav-links a:hover {
+  color: #61bdbb
+}
+
+.nav-links a:active {
+  color: #61bdbb
 }
