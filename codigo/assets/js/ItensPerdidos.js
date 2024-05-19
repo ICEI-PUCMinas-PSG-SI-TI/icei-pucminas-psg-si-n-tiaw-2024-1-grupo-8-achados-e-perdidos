@@ -2,7 +2,7 @@ import { getJSON } from "./modules/json.js";
 // se não estiver aberto substituir link por: https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/, https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/
 // ou link propio que pode ser criado dando um fork e iniciando o servidor (usando replit)
 //mude em ItensPerdidos.js, Main.js e detalhes.js
-const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
+const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 
 
 
