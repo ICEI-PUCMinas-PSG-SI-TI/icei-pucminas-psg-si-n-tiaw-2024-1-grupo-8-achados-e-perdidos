@@ -1,4 +1,5 @@
-import { carregarJSON } from "./modules/json.js";
+import {putJSON, getJSON} from "./modules/json.js";
+
 
 function aparecerTela (){
     // URL da nova tela
@@ -7,8 +8,41 @@ function aparecerTela (){
     // Abre a nova tela em uma nova janela
     window.open(novaTelaURL, '_blank');
 }
+ const caminho_JSON = ("https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev")
 
-var json = {
+ async function carregarItensPerdidos() {
+    try {
+        // Leitura dos dados do JSON
+        let resposta_requisicao = await getJSON(caminho_JSON + "/instituicoes");
+        var itensPerdidosDiv = document.getElementById('itensPerdidos');
+
+        resposta_requisicao.instituicoes.forEach(function(instituicao) {
+            instituicao.itens_perdidos.forEach(function(item) {
+                var itemDiv = document.createElement('div');
+                itemDiv.innerHTML = `
+                    <h2 class="nomeitem" id="titulo">${item.nome}</h2>
+                    <p class="nomeitem"><strong>Descrição:</strong> ${item.descricao}</p>
+                    <p class="nomeitem"><strong>Contato:</strong> ${item.contato}</p>
+                    <p class="nomeitem"><strong>Localização Encontrado:</strong> ${item.localizacao_encontrado}</p>
+                    <p class="nomeitem"><strong>Data Encontrado:</strong> ${item.data_encontrado}</p>
+                    <p class="nomeitem"><strong>Data Devolvido:</strong> ${item.data_devolvido}</p>
+                    <img class="nomeitem" id="imagem" src="${item.link_img}" alt="${item.nome}">
+                `;
+                itensPerdidosDiv.appendChild(itemDiv);
+            });
+        });
+    } catch (error) {
+        console.error("Erro ao carregar os itens perdidos:", error);
+    }
+}
+
+// Chama a função para carregar os itens perdidos quando a página for carregada
+document.addEventListener('DOMContentLoaded', carregarItensPerdidos);
+
+ 
+
+
+ /* var json = {
    itens_perdidos: [
    {
      "id": 1,
@@ -24,20 +58,5 @@ var json = {
      "localizacao_encontrado": "Rua A, Cidade Grande"
    }
  ]
-} 
+}   */
 
-var itensPerdidosDiv = document.getElementById('itensPerdidos');
-
-    json.itens_perdidos.forEach(function(item) {
-        var itemDiv = document.createElement('div');
-        itemDiv.innerHTML = `
-            <h2 class="nomeitem" id="titulo">${item.nome}</h2>
-            <p class="nomeitem"><strong>Descrição:</strong> ${item.descricao}</p>
-            <p class="nomeitem"><strong>Contato:</strong> ${item.contato}</p>
-            <p class="nomeitem"><strong>Localização Encontrado:</strong> ${item.localizacao_encontrado}</p>
-            <p class="nomeitem"><strong>Data Encontrado:</strong> ${item.data_encontrado}</p>
-            <p class="nomeitem"><strong>Data Devolvido:</strong> ${item.data_devolvido}</p>
-            <img class="nomeitem" id="imagem" src="${item.link_img}" alt="${item.nome}">
-        `;
-        itensPerdidosDiv.appendChild(itemDiv);
-});

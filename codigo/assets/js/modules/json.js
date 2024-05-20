@@ -1,4 +1,5 @@
 async function carregarJSON(caminhoArquivo) {
+ console.log("chegou aqui")
   try {
     const resposta = await fetch(caminhoArquivo);
     if (!resposta.ok) {

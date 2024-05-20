@@ -120,24 +120,24 @@ body {
         display: none;
         flex-direction: column;
         width: 100%;
-        position: absolute;
+        /* position: absolute; */
         top: 60px;
         left: 0;
         background-color: #c9f4f8;
-    }
-
-    .nav-links li {
+      }
+    
+      .nav-links li {
         text-align: center;
         padding: 15px 0;
-    }
-
-    .burger {
+      }
+    
+      .burger {
         display: flex;
-    }
-
-    .nav-links.active {
+      }
+    
+      .nav-links.active {
         display: flex;
-    }
+      }
 }
 
 .nav-links a:hover{
