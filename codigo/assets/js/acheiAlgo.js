@@ -30,7 +30,23 @@ function encontra_instituicao(id, intituicoes) {
     return null;
 }
 
-function cadastra_item(intituicoes) {
+function itemCadastradoComSucesso() {
+    alert("Item cadastrado com sucesso");
+    let div_img = document.getElementsByClassName("form_upload_img")[0];
+    let select_tag = document.getElementById("select_tag");
+    let select_instituicao = document.getElementById("select_instituicao");
+
+    div_img.innerHTML = "+";
+    select_tag.innerHTML = '<option value="" disabled selected hidden>Tag do item</option>';
+    select_instituicao.innerHTML = '<option value="" disabled selected hidden>Instituição</option>';
+    
+    document.getElementById("nome_item").value = "";
+    document.getElementById("desc_item").value = "";
+    document.getElementById("contato_item").value = "";
+    document.getElementById("local_item").value = "";
+}
+
+async function cadastra_item(intituicoes) {
     // Procura a instituição
     let id_instituicao = document.getElementById("select_instituicao").value;
     let instituicao = encontra_instituicao(id_instituicao, intituicoes);
@@ -132,6 +148,7 @@ async function main() {
             event.preventDefault();
             if(link_preenchido) {
                 cadastra_item(resposta_requisicao);
+                itemCadastradoComSucesso();           
             } else {
                 alert("O link da imagem está vazio ou não é valido");
             }
