@@ -8,16 +8,27 @@ function aparecerTela (){
     // Abre a nova tela em uma nova janela
     window.open(novaTelaURL, '_blank');
 }
- const caminho_JSON = ("https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev")
+function obterParametroComoInt(parametroNome) {
+    let parametrosURL = new URLSearchParams(window.location.search);
+    let valorParametro = parametrosURL.get(parametroNome);
+    return valorParametro !== null ? parseInt(valorParametro, 10) : null;
+  }
+
+ const caminho_JSON = ("https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/")
 
  async function carregarDados() {
     try {
         // Leitura dos dados do json
         let resposta_requisicao = await getJSON(caminho_JSON + "instituicoes");
         var itensPerdidosDiv = document.getElementById('itensPerdidos');
-
-        resposta_requisicao.instituicoes.forEach(function(instituicao) {
-            instituicao.itens_perdidos.forEach(function(item) {
+          console.log(resposta_requisicao)
+        resposta_requisicao.forEach(function(instituicao) {
+            if (instituicao.id==obterParametroComoInt("InstiId")){
+                    
+            
+                instituicao.itens_perdidos.forEach(function(item) {
+                    if (item.id==obterParametroComoInt("ItemId")){
+            
                 var itemDiv = document.createElement('div');
                 itemDiv.innerHTML = `
                     <h2 class="nomeitem" id="titulo">${item.nome}</h2>
@@ -28,15 +39,15 @@ function aparecerTela (){
                     <p class="nomeitem"><strong>Data Devolvido:</strong> ${item.data_devolvido}</p>
                     <img class="nomeitem" id="imagem" src="${item.link_img}" alt="${item.nome}">
                 `;
-                itensPerdidosDiv.appendChild(itemDiv);
-            });
+                itensPerdidosDiv.appendChild(itemDiv);}
+            });}
         });
     } catch (error) {
         console.error("Erro ao carregar os dados do JSON:", error);
     }
-}
+}  console.log(obterParametroComoInt("ItemId"))
 
-// Chama a função para carregar os dados
+// Chamando a função para carregar os dados
 carregarDados();
 
  /* var json = {

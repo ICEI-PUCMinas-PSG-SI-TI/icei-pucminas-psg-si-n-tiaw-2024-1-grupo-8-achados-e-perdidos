@@ -3,16 +3,15 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-   justify-content: center; /* Centraliza horizontalmente */
-   align-items: center; /* Centraliza verticalmente */
-   height: 100vh; /* Tamanho da tela */
-
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
 }
 
-#itensPerdido {
-    max-width: 800px; /* Define a largura máxima da área de conteúdo */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 20px; /* Espaçamento interno */
+#itensPerdidos {
+    max-width: 800px; 
+    margin: 20px auto; 
+    padding: 20px; 
 }
 
 .nomeitem {
@@ -20,14 +19,11 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
-    margin-bottom: -5px;
-   
-    
+    margin-bottom: 10px; 
 }
 
 .nomeitem h2 {
     margin-top: 0;
-    
 }
 
 .nomeitem p {
@@ -38,44 +34,30 @@ body {
     max-width: 100%;
     height: auto;
     margin-top: 10px;
-    margin-left: 50px;
-    
+    margin-left: 0; 
 }
 
-#titulo{
+#titulo {
     color: brown;
     text-align: center;
 }
 
-
-
-/* Estilos responsivos */
 @media screen and (max-width: 600px) {
     .container {
         padding: 10px;
-        
     }
     .item {
         padding: 15px;
-       
     }
-
-    
 }
+
 .navbar {
-   
-   background-color: #c9f4f8;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 10px 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  
-       
-  
-    
+    background-color: #c9f4f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 .logo img {
@@ -112,7 +94,6 @@ body {
     background-color: #c59543;
     border-radius: 10px;
     margin-right: 9px;
-    
 }
 
 @media (max-width: 768px) {
@@ -120,29 +101,44 @@ body {
         display: none;
         flex-direction: column;
         width: 100%;
-        /* position: absolute; */
         top: 60px;
         left: 0;
         background-color: #c9f4f8;
-      }
-    
-      .nav-links li {
+    }
+
+    .nav-links li {
         text-align: center;
         padding: 15px 0;
-      }
-    
-      .burger {
+    }
+
+    .burger {
         display: flex;
-      }
-    
-      .nav-links.active {
+    }
+
+    .nav-links.active {
         display: flex;
-      }
+    }
 }
 
-.nav-links a:hover{
-    color: #61bdbb
+.nav-links a:hover {
+    color: #61bdbb;
 }
-.nav-links a:active{
-    color: #61bdbb
+
+.nav-links a:active {
+    color: #61bdbb;
+}
+
+
+@media screen and (min-width: 800px) {
+    .principal {
+        width: 50%;
+    }
+
+    #cadastro_item {
+        align-items: center;
+    }
+
+    .form_upload_img {
+        height: 250px;
+    }
 }
