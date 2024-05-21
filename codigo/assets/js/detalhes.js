@@ -10,10 +10,10 @@ function aparecerTela (){
 }
  const caminho_JSON = ("https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev")
 
- async function carregarItensPerdidos() {
+ async function carregarDados() {
     try {
-        // Leitura dos dados do JSON
-        let resposta_requisicao = await getJSON(caminho_JSON + "/instituicoes");
+        // Leitura dos dados do json
+        let resposta_requisicao = await getJSON(caminho_JSON + "instituicoes");
         var itensPerdidosDiv = document.getElementById('itensPerdidos');
 
         resposta_requisicao.instituicoes.forEach(function(instituicao) {
@@ -32,15 +32,12 @@ function aparecerTela (){
             });
         });
     } catch (error) {
-        console.error("Erro ao carregar os itens perdidos:", error);
+        console.error("Erro ao carregar os dados do JSON:", error);
     }
 }
 
-// Chama a função para carregar os itens perdidos quando a página for carregada
-document.addEventListener('DOMContentLoaded', carregarItensPerdidos);
-
- 
-
+// Chama a função para carregar os dados
+carregarDados();
 
  /* var json = {
    itens_perdidos: [
