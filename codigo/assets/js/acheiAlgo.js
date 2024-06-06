@@ -1,25 +1,13 @@
 /* Arquivo de Javascript da página de cadastro de um item */
 import {putJSON, getJSON} from "./modules/json.js";
+import {preenche_select, tipo_tags} from "./modules/geral.js";
 
 var link_preenchido = false;
 var link_img = null;
-var tipo_tags = [
-    "Eletrônico",
-    "Camisa",
-    "Calça",
-    "Acessório",
-    "Livro",
-    "Caderno",
-    "Outro"
-]
+
 const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 
 /* ----------- Funções inicio ----------- */
-function preenche_select(id, nome, select) {
-    let text = `<option value="${id}">${nome}</option>`;
-    select.innerHTML += text;
-}
-
 function encontra_instituicao(id, intituicoes) {
     for (let i = 0; i < intituicoes.length; i++) {
         if (intituicoes[i].id == id) {
