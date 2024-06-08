@@ -1,11 +1,10 @@
 import { carregarJSON, putJSON } from "./modules/json.js";
 
-const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
+const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/"; 
 
 async function cadastraUsuario() {
     try {
         const dados = await carregarJSON(caminho_JSON + "usuarios");
-
         const usuarios = dados || [];
 
         const cpf = document.getElementById("cpf_usuario").value;
@@ -22,12 +21,9 @@ async function cadastraUsuario() {
         }
 
         // Verificação da certificação de admin, se o campo foi preenchido
-        const certificacaoExistente = usuarios.some(usuario => usuario.certificacao_admin === certificacao_admin);
-        if (certificacaoExistente) {
-            if (!certificacaoExistente) {
-                alert("Certificação de admin inválida!");
-                return;
-            }
+        if (admin && !certificacao_admin) {
+            alert("Certificação de admin é obrigatória para administradores!");
+            return;
         }
 
         const novoUsuario = {
@@ -51,12 +47,30 @@ async function cadastraUsuario() {
     }
 }
 
-async function main() {
+function toggleCertificacaoAdmin() {
+    const certificacaoAdminInput = document.getElementById("certificacao_admin_usuario");
+    const adminCheckbox = document.getElementById("admin_usuario");
+
+    certificacaoAdminInput.disabled = !adminCheckbox.checked;
+
+    if (!adminCheckbox.checked) {
+        certificacaoAdminInput.value = "";
+    }
+}
+
+function main() {
     const formCadastro = document.getElementById("cadastro_usuario");
     formCadastro.addEventListener("submit", async (event) => {
         event.preventDefault();
         await cadastraUsuario();
     });
+
+    // Adiciona o evento no checkbox
+    const adminCheckbox = document.getElementById("admin_usuario");
+    adminCheckbox.addEventListener("click", toggleCertificacaoAdmin);
+
+    // Chama a função para configurar o estado inicial da certificação
+    toggleCertificacaoAdmin(); 
 }
 
 main();
