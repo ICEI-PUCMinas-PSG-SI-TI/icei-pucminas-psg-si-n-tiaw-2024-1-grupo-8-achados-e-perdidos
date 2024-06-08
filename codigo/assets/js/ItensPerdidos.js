@@ -1,12 +1,12 @@
 import { getJSON } from "./modules/json.js";
 import {preenche_select, tipo_tags} from "./modules/geral.js";
+
 // se não estiver aberto substituir link por: https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/, https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/
 // ou link propio que pode ser criado dando um fork e iniciando o servidor (usando replit)
 //mude em ItensPerdidos.js, Main.js e detalhes.js
-const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
+const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
 
-
-
+  
 let dadosJson = await getJSON(caminho_JSON+"instituicoes");
 let cardsEl = document.getElementById('cards');
 
@@ -24,24 +24,47 @@ function mostrarItensPerdidos(data, idInstituicao) {
         if (instituicao) {
           let saida = "";
           for (let item of instituicao.itens_perdidos) {
+            if(!item.encontrado){
             saida += 
-            `<div class="col mb-3 d-flex justify-content-center cartao_item">
-            <div class="card card-instituicao" href="instituicao.html" id="instituicao-${item.id}">
-              <div class="card-body">
-                <img
-                  src="${item.link_img}"
-                  class="item_img" alt="imagem do item perido">
-                <div class="">
-                  <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
-                  <p class="fs-5 endereco text-start">${item.descricao}</p>
-                </div>
-                <div class="card-tag">
-                  ${item.tag}
+              `<div class="col mb-3 d-flex justify-content-center cartao_item">
+              <div class="card card-instituicao" href="instituicao.html" id="instituicao-${item.id}">
+                <div class="card-body">
+                  <img
+                    src="${item.link_img}"
+                    class="item_img" alt="imagem do item perido">
+                  <div class="">
+                    <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
+                    <p class="fs-5 endereco text-start">${item.descricao}</p>
+                  </div>
+                  <div class="card-tag">
+                    ${item.tag}
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>`;
-          }
+            </div>`;
+            }
+            else {
+              saida += 
+            `<div class="col mb-3 d-flex justify-content-center cartao_item">
+              <div class="card card-instituicao achado" href="instituicao.html" id="instituicao-${item.id}">
+                <div class="card-body">
+                  <img
+                    src="${item.link_img}"
+                    class="item_img" alt="imagem do item perido">
+                  <div class="">
+                    <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
+                    <p class="fs-5 endereco text-start">${item.descricao}</p>
+
+                    <p class="fs-5 endereco text-start">Item achado</p>
+                  </div>
+                  <div class="card-tag">
+                    ${item.tag}
+                  </div>
+                </div>
+              </div>
+            </div>`;
+            
+          }}
           cardsEl.innerHTML = saida;
           let instituicoesTable = document.querySelectorAll('.card-instituicao');
 
@@ -101,3 +124,5 @@ function pesquisaDeItens() {
 }
 
 pesquisaDeItens();
+
+

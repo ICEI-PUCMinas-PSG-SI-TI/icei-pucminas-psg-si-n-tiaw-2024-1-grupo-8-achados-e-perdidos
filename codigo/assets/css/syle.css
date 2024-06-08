@@ -35,6 +35,11 @@
   border-radius: .8rem !important;
   transition: transform 0.1s ease-in-out;
 }
+.achado {
+  background-color: rgba(45, 255, 38, 0.2);
+  border-radius: .8rem !important;
+  transition: transform 0.1s ease-in-out;
+}
 
 .card-instituicao:hover {
   transform: scale(1.05);

@@ -1,6 +1,11 @@
 import { carregarJSON } from "./modules/json.js";
+const usuarioLogadoJSON = localStorage.getItem('usuarioLogado');
+if (usuarioLogadoJSON){
+    window.location.href = "itensPerdidos.html?id=" + 1;
 
-const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
+}
+else{
+    const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/";
 
 async function login() {
     const cpf = document.getElementById("cpf").value;
@@ -36,3 +41,4 @@ formLogin.addEventListener("submit", (event) => {
     event.preventDefault();
     login();
 });
+}

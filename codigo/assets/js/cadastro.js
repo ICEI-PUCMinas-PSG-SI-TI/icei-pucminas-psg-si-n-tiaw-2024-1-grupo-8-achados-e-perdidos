@@ -22,8 +22,8 @@ async function cadastraUsuario() {
         }
 
         // Verificação da certificação de admin, se o campo foi preenchido
-        if (certificacao_admin) {
-            const certificacaoExistente = usuarios.some(usuario => usuario.certificacao_admin === certificacao_admin);
+        const certificacaoExistente = usuarios.some(usuario => usuario.certificacao_admin === certificacao_admin);
+        if (certificacaoExistente) {
             if (!certificacaoExistente) {
                 alert("Certificação de admin inválida!");
                 return;
