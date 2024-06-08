@@ -55,7 +55,7 @@ function mostrarItensPerdidos(data, idInstituicao) {
                     <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
                     <p class="fs-5 endereco text-start">${item.descricao}</p>
 
-                    <p class="fs-5 endereco text-start">Item achado</p>
+                    <p class="fs-5 endereco text-start">Item encontrado</p>
                   </div>
                   <div class="card-tag">
                     ${item.tag}
