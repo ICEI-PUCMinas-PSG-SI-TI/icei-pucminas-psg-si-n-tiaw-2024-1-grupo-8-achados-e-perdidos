@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif;
+    background-color: #add8e6; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; 
+}
+
+.principal { 
+    background-color: white; 
+    padding: 30px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 350px; 
+}
+
+
+.user_input {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+}
+
+.user_input::placeholder {
+    color: #999; 
+}
+
+
+.botao_enviar {
+    background-color: #4296b2; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao_enviar:hover {
+    background-color: #47bae0; 
+}
+
+
+.principal img { 
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+}
+.flex{
+    display: flex;
+    
+}

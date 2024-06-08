@@ -4,27 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Usuário</title>
-    <link rel="stylesheet" href="../assets/css/acheiAlgo.css">
+    <link rel="stylesheet" href="../assets/css/cadastro.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="/codigo/assets/images/logo1.png"  alt="logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="/codigo/pages/acheiAlgo.html">Achei Algo</a></li>
-                <li><a href="/codigo/pages/itensPerdidos.html">Achados</a></li>
-                <li><a href="#">Cadastrar Instituição </a></li>
-                <li><a href="/codigo/index.html">Ver Instituição</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-    </header>
+
 
     <main class="principal">
         <form id="cadastro_usuario">
@@ -32,13 +15,17 @@
             <input type="text" name="username" placeholder="Nome de usuário" required id="username_usuario" class="user_input">
             <input type="password" name="senha" placeholder="Senha" required id="senha_usuario" class="user_input">
             <input type="text" name="certificacao_admin" placeholder="Certificação Admin (Opcional)" id="certificacao_admin_usuario" class="user_input">
-            <label for="admin_usuario">Administrador:</label>
+            <div class="flex">
+            <label class=""  for="admin_usuario">Administrador:</label>
             <input type="checkbox" name="admin" id="admin_usuario" class="user_input">
+            </div>
+            
             <input type="submit" value="Registrar Usuário" class="botao_enviar">
+            <img src="/codigo/assets/images/logo1.png" alt="">
         </form>
     </main>
     <script type="module" src="../assets/js/modules/json.js"></script>
     <script type="module" src="../assets/js/cadastro.js"></script>
-    <script src="/codigo/assets/js/header.js"></script>
+
 </body>
 </html>

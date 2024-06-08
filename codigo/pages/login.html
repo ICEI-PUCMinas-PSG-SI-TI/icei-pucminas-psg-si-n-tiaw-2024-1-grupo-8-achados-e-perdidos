@@ -3,38 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="../assets/css/acheiAlgo.css"> 
+    <link rel="stylesheet" href="../assets/css/login.css"> 
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="/codigo/assets/images/logo1.png"  alt="logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="/codigo/pages/acheiAlgo.html">Achei Algo</a></li>
-                <li><a href="/codigo/pages/itensPerdidos.html">Achados</a></li>
-                <li><a href="#">Cadastrar Instituição </a></li>
-                <li><a href="/codigo/index.html">Ver Instituição</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-    </header>
+    
 
     <main class="principal">
         <form id="form_login">
+            <div class="logo-container">
+                <img src="/codigo/assets/images/logo1.png" alt="Logo da Empresa">
+            </div>
             <input type="text" id="cpf" placeholder="CPF" required>
             <input type="password" id="senha" placeholder="Senha" required>
             <button type="submit">Entrar</button>
+            <button type="button" onclick="window.location.href='/codigo/pages/cadastro.html'">cadastrar</button>
         </form>
     </main>
 
     <script type="module" src="../assets/js/modules/json.js"></script>
     <script type="module" src="../assets/js/login.js"></script> 
-    <script src="/codigo/assets/js/header.js"></script>
+
 </body>
 </html>
