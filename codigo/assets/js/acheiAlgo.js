@@ -38,6 +38,7 @@ async function cadastra_item(intituicoes) {
     // Procura a instituição
     let id_instituicao = document.getElementById("select_instituicao").value;
     let instituicao = encontra_instituicao(id_instituicao, intituicoes);
+    let cpf_usuario_logado = JSON.parse(usuarioLogado).cpf;
 
     // To-do: alerta cadastro errado
     if(instituicao === null) {
@@ -68,7 +69,7 @@ async function cadastra_item(intituicoes) {
                 descricao: `${descricao}`,
                 contato: contato,
                 link_img: link_img,
-                cpf_encontrou: "12345678901",
+                cpf_encontrou: cpf_usuario_logado,
                 encontrado: false,
                 data_encontrado: `${data_atual.getDate()}/${data_atual.getMonth() + 1}/${data_atual.getFullYear()}`,
                 data_devolvido: null,
@@ -91,11 +92,11 @@ async function cadastra_item(intituicoes) {
 /* ----------- Funções fim ----------- */
 
 async function main() {
+    const usuarioLogado = localStorage.getItem('usuarioLogado');
+
     // Declara variaveis
     var form_cadastro = document.getElementById("cadastro_item");
-    var lista_input = document.getElementsByClassName("item_input");
     var div_img = document.getElementsByClassName("form_upload_img")[0];
-    var requisicao = new XMLHttpRequest();
 
     // Esse trecho de código implementa a função do input de imagem 
     div_img.addEventListener("click", () => {
@@ -134,16 +135,21 @@ async function main() {
 
         form_cadastro.addEventListener("submit", (event) => {
             event.preventDefault();
-            if(link_preenchido) {
-                cadastra_item(resposta_requisicao);
-                itemCadastradoComSucesso();           
+            // Idenfifica se o usuario está logado
+            if(usuarioLogado) {
+                if(link_preenchido) {
+                    cadastra_item(resposta_requisicao);
+                    itemCadastradoComSucesso();           
+                } else {
+                    alert("O link da imagem está vazio ou não é valido");
+                }
             } else {
-                alert("O link da imagem está vazio ou não é valido");
+                alert("Você precisa estar logado para fazer cadastro do item");
             }
         });
-        } catch(e) {
+    } catch(e) {
         console.log("Problema ao efetuar requisição: " + e);
-        }
+    }
 }
 
 main();
