@@ -50,3 +50,23 @@ function Inicializar() {
     })
   })
 }
+
+/* Pesquisa por instituições */
+function pesquisar() {
+  const inst = document.getElementsByClassName("card-title");
+  const valorInput = input_pesquisa.value.toLowerCase();
+
+  for(let i = 0; i < inst.length; i++) {
+    let content = inst[i].textContent.toLowerCase()
+    let card = inst[i].closest(".col");
+
+    if(content.includes(valorInput)) {
+      card.style.display = "";
+    } else {
+      card.style.cssText = "display: none !important";
+    }
+  }
+}
+
+const input_pesquisa = document.getElementById("input_pesquisa");
+input_pesquisa.addEventListener("input", pesquisar);

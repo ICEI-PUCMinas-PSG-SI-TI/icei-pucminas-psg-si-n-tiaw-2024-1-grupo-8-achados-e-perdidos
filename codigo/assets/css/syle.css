@@ -124,3 +124,7 @@
 .nav-links a:active {
   color: #61bdbb
 }
+
+#input_pesquisa {
+  margin-bottom: 20px;
+}
