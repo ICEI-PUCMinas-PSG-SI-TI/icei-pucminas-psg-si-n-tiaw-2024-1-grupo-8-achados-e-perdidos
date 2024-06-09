@@ -1,16 +1,14 @@
-import { getJSON, putJSON } from "./modules/json.js";
-
-const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
+import { getJSON, putJSON, caminho_JSON } from "./modules/json.js";
 
 async function main() {
-    const usuarioLogado = true; // localStorage.getItem('usuarioLogado')
+    const usuarioLogado = localStorage.getItem('usuarioLogado');
 
     // Se o usuario está logado realiza a listagem dos seus itens cadastrados
     if(usuarioLogado) {
-      const cpf_usuario_logado = "12345678901"; // JSON.parse(usuarioLogado).cpf
+      const cpf_usuario_logado = JSON.parse(usuarioLogado).cpf.replace(/\D/g, '');
       var meus_itens = [];
       var saida = "";
-  
+      
       // Lê a requisição
       try {
           var json = await getJSON(caminho_JSON + "instituicoes");
@@ -23,44 +21,46 @@ async function main() {
               });
           });
           if(meus_itens.length !== 0) {
+            saida = "<h2 class='titulo_achados'>Itens achados por mim:</h2>";
             meus_itens.forEach(item => {
             if(!item.encontrado){
               saida += 
-              `<div class="col mb-3 d-flex justify-content-center cartao_item">
-              <div class="card card-instituicao" href="instituicao.html" id="instituicao-${item.id}">
-                <div class="card-body">
-                  <img
-                    src="${item.link_img}"
-                    class="item_img" alt="imagem do item perido">
-                  <div class="">
-                    <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
-                    <p class="fs-5 endereco text-start">${item.descricao}</p>
-                  </div>
-                  <div class="card-tag">
-                    ${item.tag}
-                  </div>
-                  <button class="botao_devolvido">Devolvido</button>
-                </div>
-              </div>
-            </div>`;
-            } else {
-              saida += 
-              `<div class="col mb-3 d-flex justify-content-center cartao_item">
-                <div class="card card-instituicao achado" href="instituicao.html" id="instituicao-${item.id}">
-                  <div class="card-body">
+              `<div class="col col-lg-3 mb-3 d-flex justify-content-center cartao_item">
+                <div class="card card-instituicao" href="instituicao.html" id="instituicao-${item.id}">
+                  <div class="card-body d-flex flex-column">
                     <img
                       src="${item.link_img}"
                       class="item_img" alt="imagem do item perido">
-                    <div class="">
+                    <div class="flex-grow-1">
+                      <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
+                      <p class="fs-5 endereco text-start">${item.descricao}</p>
+                    </div>
+                    <div class="card-tag px-2 mt-3 align-self-end">
+                      ${item.tag}
+                    </div>
+                    <button class="botao_devolvido mt-3 align-self-end">Devolvido</button>
+                  </div>
+                </div>
+              </div>
+              `;
+            } else {
+              saida += 
+              `<div class="col col-lg-3 mb-3 d-flex justify-content-center cartao_item">
+                <div class="card card-instituicao achado" href="instituicao.html" id="instituicao-${item.id}">
+                  <div class="card-body d-flex flex-column">
+                    <img
+                      src="${item.link_img}"
+                      class="item_img" alt="imagem do item perido">
+                    <div class="flex-grow-1">
                       <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
                       <p class="fs-5 endereco text-start">${item.descricao}</p>
   
-                      <p class="fs-5 endereco text-start">Item encontrado</p>
+                      <p class="fs-5 endereco text-start"><strong>Item encontrado</strong></p>
                     </div>
-                    <div class="card-tag">
+                    <div class="card-tag px-2 mt-3 align-self-end">
                       ${item.tag}
                     </div>
-                  <button class="botao_perdido">Perdido</button>
+                  <button class="botao_perdido mt-3 align-self-end">Perdido</button>
                   </div>
                 </div>
               </div>`;
@@ -121,7 +121,7 @@ async function marcarComoDevolvido() {
       for(let i = 0; i < botoes_devolvido.length; i++) {
         botoes_devolvido[i].addEventListener("click", (event) => {
           marcaEstadoItem(true, event, json);
-          alert("Item marcado como não encontrado!");
+          alert("Item marcado como encontrado!");
         });
       }
 

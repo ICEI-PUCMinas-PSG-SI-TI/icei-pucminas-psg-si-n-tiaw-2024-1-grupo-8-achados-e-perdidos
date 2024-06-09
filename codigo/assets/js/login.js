@@ -1,11 +1,10 @@
-import { carregarJSON } from "./modules/json.js";
+import { carregarJSON, caminho_JSON} from "./modules/json.js";
 const usuarioLogadoJSON = localStorage.getItem('usuarioLogado');
 if (usuarioLogadoJSON){
     window.location.href = "itensPerdidos.html?id=" + 1;
 
 }
 else{
-    const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 
 async function login() {
     const cpf = document.getElementById("cpf").value;
@@ -23,7 +22,7 @@ async function login() {
             // Login bem-sucedido
             alert("Login realizado com sucesso!");
             localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-            window.location.href = "itensPerdidos.html?id=" + 1 ;
+            window.location.href = "../index.html";
 
             // Redirecionar para a página principal ou realizar outras ações
         } else {

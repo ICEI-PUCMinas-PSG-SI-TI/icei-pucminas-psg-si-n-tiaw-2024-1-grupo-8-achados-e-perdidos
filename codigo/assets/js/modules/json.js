@@ -1,5 +1,8 @@
+// se não estiver aberto substituir link por: https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/, https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/
+// ou link propio que pode ser criado dando um fork e iniciando o servidor (usando replit)
+const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
+
 async function carregarJSON(caminhoArquivo) {
- console.log("chegou aqui")
   try {
     const resposta = await fetch(caminhoArquivo);
     if (!resposta.ok) {
@@ -10,20 +13,6 @@ async function carregarJSON(caminhoArquivo) {
   } catch (erro) {
     console.error(erro);
   }
-}
-
-// Função que define o onreadystatechange de uma requisição para capturar erros
-function setRequisicaoState(req) {
-  req.onreadystatechange = function () {
-    if (req.readyState === 4) {
-        if (req.status >= 200 && req.status < 300) {
-            console.log("Requisição ocorreu corretamente")
-        } else {
-            console.error('Erro na requisição:', req.status, req.statusText);
-        }
-    }
-  };
-  return req;
 }
 
 // Recebe caminho da requisição e um valor no formato de objeto
@@ -55,4 +44,4 @@ async function getJSON(caminho) {
   return data;
 }
 
-export {carregarJSON, putJSON, getJSON}
+export {carregarJSON, putJSON, getJSON, caminho_JSON}

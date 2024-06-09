@@ -1,5 +1,5 @@
-const usuarioLogadoJSON = localStorage.getItem('usuarioLogado');
-if (usuarioLogadoJSON) {    
+const usuriaoLog = localStorage.getItem('usuarioLogado');
+if (usuriaoLog) {    
 
 }
 else{

@@ -1,6 +1,4 @@
-import { carregarJSON, putJSON } from "./modules/json.js";
-
-const caminho_JSON = "https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/"; 
+import { carregarJSON, putJSON, caminho_JSON } from "./modules/json.js";
 
 async function cadastraUsuario() {
     try {

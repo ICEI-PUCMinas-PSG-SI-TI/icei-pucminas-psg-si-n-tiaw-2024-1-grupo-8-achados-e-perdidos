@@ -1,4 +1,4 @@
-import {putJSON, getJSON} from "./modules/json.js";
+import {putJSON, getJSON, caminho_JSON} from "./modules/json.js";
 
 
 function aparecerTela (){
@@ -14,7 +14,6 @@ function obterParametroComoInt(parametroNome) {
     return valorParametro !== null ? parseInt(valorParametro, 10) : null;
   }
 
- const caminho_JSON = ("https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/")
 
  async function carregarDados() {
     try {

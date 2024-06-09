@@ -13,15 +13,6 @@ burger.addEventListener('click', () => {
 
 const loginSair = document.getElementById('loginSair');
 const usuarioLogadoJSON = localStorage.getItem('usuarioLogado');
-if (usuarioLogadoJSON){
-
-}
-else{
-    const usuarioLogadoJSON = localStorage.getItem('usuarioLogado');
-}
-
-
-
 
 function atualizarNavbar() {
     loginSair.innerHTML = '';

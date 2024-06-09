@@ -1,11 +1,5 @@
-import { getJSON } from "./modules/json.js";
+import { getJSON, caminho_JSON} from "./modules/json.js";
 import {preenche_select, tipo_tags} from "./modules/geral.js";
-
-// se não estiver aberto substituir link por: https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/, https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/
-// ou link propio que pode ser criado dando um fork e iniciando o servidor (usando replit)
-//mude em ItensPerdidos.js, Main.js e detalhes.js
-const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
-
   
 let dadosJson = await getJSON(caminho_JSON+"instituicoes");
 let cardsEl = document.getElementById('cards');
@@ -26,17 +20,17 @@ function mostrarItensPerdidos(data, idInstituicao) {
           for (let item of instituicao.itens_perdidos) {
             if(!item.encontrado){
             saida += 
-              `<div class="col mb-3 d-flex justify-content-center cartao_item">
+              `<div class="col col-lg-3 mb-3 d-flex justify-content-center cartao_item">
               <div class="card card-instituicao" href="instituicao.html" id="instituicao-${item.id}">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                   <img
                     src="${item.link_img}"
                     class="item_img" alt="imagem do item perido">
-                  <div class="">
+                  <div class="flex-grow-1">
                     <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
                     <p class="fs-5 endereco text-start">${item.descricao}</p>
                   </div>
-                  <div class="card-tag">
+                  <div class="card-tag px-2 mt-3 align-self-end">
                     ${item.tag}
                   </div>
                 </div>
@@ -45,19 +39,19 @@ function mostrarItensPerdidos(data, idInstituicao) {
             }
             else {
               saida += 
-            `<div class="col mb-3 d-flex justify-content-center cartao_item">
+            `<div class="col col-lg-3 mb-3 d-flex justify-content-center cartao_item">
               <div class="card card-instituicao achado" href="instituicao.html" id="instituicao-${item.id}">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                   <img
                     src="${item.link_img}"
                     class="item_img" alt="imagem do item perido">
-                  <div class="">
+                  <div class="flex-grow-1">
                     <div class="card-title text-center w-100 bg-white p-1 rounded-bottom rounded-4 item_nome">${item.nome}</div>
                     <p class="fs-5 endereco text-start">${item.descricao}</p>
 
-                    <p class="fs-5 endereco text-start">Item encontrado</p>
+                      <p class="fs-5 endereco text-start"><strong>Item encontrado</strong></p>
                   </div>
-                  <div class="card-tag">
+                  <div class="card-tag px-2 mt-3 align-self-end">
                     ${item.tag}
                   </div>
                 </div>

@@ -1,11 +1,9 @@
 /* Arquivo de Javascript da página de cadastro de um item */
-import {putJSON, getJSON} from "./modules/json.js";
+import {putJSON, getJSON, caminho_JSON} from "./modules/json.js";
 import {preenche_select, tipo_tags} from "./modules/geral.js";
 
 var link_preenchido = false;
 var link_img = null;
-
-const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
 
 /* ----------- Funções inicio ----------- */
 function encontra_instituicao(id, intituicoes) {
@@ -34,7 +32,7 @@ function itemCadastradoComSucesso() {
     document.getElementById("local_item").value = "";
 }
 
-async function cadastra_item(intituicoes) {
+async function cadastra_item(intituicoes, usuarioLogado) {
     // Procura a instituição
     let id_instituicao = document.getElementById("select_instituicao").value;
     let instituicao = encontra_instituicao(id_instituicao, intituicoes);
@@ -60,6 +58,7 @@ async function cadastra_item(intituicoes) {
         meta_req.onload = function () {
             let meta = JSON.parse(meta_req.response);
             meta.qnt_item++;
+            let cpf = cpf_usuario_logado.replace(/\D/g, ''); // Guarda apenas os numeros no json
 
             // Cria o novo objeto de item
             let novo_item = {
@@ -69,7 +68,7 @@ async function cadastra_item(intituicoes) {
                 descricao: `${descricao}`,
                 contato: contato,
                 link_img: link_img,
-                cpf_encontrou: cpf_usuario_logado,
+                cpf_encontrou: cpf,
                 encontrado: false,
                 data_encontrado: `${data_atual.getDate()}/${data_atual.getMonth() + 1}/${data_atual.getFullYear()}`,
                 data_devolvido: null,
@@ -138,7 +137,7 @@ async function main() {
             // Idenfifica se o usuario está logado
             if(usuarioLogado) {
                 if(link_preenchido) {
-                    cadastra_item(resposta_requisicao);
+                    cadastra_item(resposta_requisicao,usuarioLogado);
                     itemCadastradoComSucesso();           
                 } else {
                     alert("O link da imagem está vazio ou não é valido");

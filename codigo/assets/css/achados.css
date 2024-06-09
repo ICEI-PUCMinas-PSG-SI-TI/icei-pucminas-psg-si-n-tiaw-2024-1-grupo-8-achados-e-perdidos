@@ -37,3 +37,26 @@ main {
     max-width: 70%;
     text-align: center;
 }
+
+/* Botoes da pagina meus achados */
+.botao_perdido, .botao_devolvido {
+    background-color: #3D3D3D;
+    padding: 0 10px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.botao_perdido:hover, .botao_devolvido:hover {
+    background-color: white;
+    padding: 0 10px;
+    color: #3D3D3D;
+    border-radius: 10px;
+    border: 1px solid #3D3D3D;
+}
+
+.titulo_achados {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
