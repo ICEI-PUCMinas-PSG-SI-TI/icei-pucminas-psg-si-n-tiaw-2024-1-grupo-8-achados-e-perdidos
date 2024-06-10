@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Item</title>
+  <link rel="stylesheet" href="../assets/css/acheiAlgo.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/codigo/assets/images/logo1.png" alt="logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="/codigo/pages/meusAchados.html">Meus Achados</a></li>
+        <li><a href="/codigo/pages/acheiAlgo.html">Achei Algo</a></li>
+        <li><a href="#">Cadastrar Instituição </a></li>
+        <li><a href="/codigo/index.html">Ver Instituição</a></li>
+        <li><a id="loginSair">sair</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="principal">
+    <form action="../index.html" id="cadastro_item">
+      <input type="text" name="item" placeholder="O que você encontrou" required id="nome_item" class="item_input">
+      <input type="text" name="item" placeholder="Descrição" required id="desc_item" class="item_input">
+      <label for="img_objeto">Coloque aqui a imagem do objeto</label>
+      <div name="img_objeto" class="form_upload_img">+</div>
+
+      <select id="select_tag" required class="item_input">
+        <option value="" disabled selected hidden>Tag do item</option>
+      </select>
+
+      <input type="tel" name="contato" placeholder="Seu número de telefone" required id="contato_item"
+        class="item_input">
+      <input type="text" name="local" placeholder="Onde encontrou" required id="local_item" class="item_input">
+      <input type="submit" value="Editar item" required class="botao_enviar">
+    </form>
+  </main>
+  <script src="/codigo/assets/js/verificacao.js"></script>
+  <script type="module" src="../assets/js/modules/json.js"></script>
+  <script type="module" src="../assets/js/modules/geral.js"></script>
+  <script type="module" src="../assets/js/editarItem.js"></script>
+  <script src="/codigo/assets/js/header.js"></script>
+
+</body>
+
+</html>

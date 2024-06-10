@@ -5,6 +5,7 @@ var tipo_tags = [
     "Acessório",
     "Livro",
     "Caderno",
+    "Casaco",
     "Outro"
 ];
 

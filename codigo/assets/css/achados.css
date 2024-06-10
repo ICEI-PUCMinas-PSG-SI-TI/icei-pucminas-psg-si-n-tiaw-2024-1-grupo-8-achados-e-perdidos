@@ -41,18 +41,29 @@ main {
 /* Botoes da pagina meus achados */
 .botao_perdido, .botao_devolvido {
     background-color: #3D3D3D;
-    padding: 0 10px;
     color: white;
+    padding: 0 10px;
     border-radius: 10px;
     border: 1px solid white;
 }
 
 .botao_perdido:hover, .botao_devolvido:hover {
     background-color: white;
-    padding: 0 10px;
     color: #3D3D3D;
+    border: 2px solid #3D3D3D;
+    cursor: pointer;
+}
+
+.botao_editar {
+    padding: 0 10px;
+    color: white;
     border-radius: 10px;
-    border: 1px solid #3D3D3D;
+    border: 1px solid rgb(114, 114, 114);
+}
+.botao_editar:hover{
+    background-color: white;
+    border: 2px solid #3D3D3D;
+    cursor: pointer;
 }
 
 .titulo_achados {

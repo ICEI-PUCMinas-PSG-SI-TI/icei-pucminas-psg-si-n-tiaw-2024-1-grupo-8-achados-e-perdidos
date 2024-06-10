@@ -1,6 +1,7 @@
 // se não estiver aberto substituir link por: https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/, https://022fc133-6630-4faf-a608-6f27ba35597b-00-198fyfed8wtqd.janeway.replit.dev/
+// Danilo: https://c51d8437-a4a7-43f1-a415-c3658c2e0366-00-24j4hia2i4fea.riker.replit.dev/
 // ou link propio que pode ser criado dando um fork e iniciando o servidor (usando replit)
-const caminho_JSON = "https://7632dd34-2094-462f-97e8-638cefefbbfe-00-xy9ocks2w8wk.riker.replit.dev/";
+const caminho_JSON = "https://c51d8437-a4a7-43f1-a415-c3658c2e0366-00-24j4hia2i4fea.riker.replit.dev/";
 
 async function carregarJSON(caminhoArquivo) {
   try {
