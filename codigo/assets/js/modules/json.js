@@ -34,6 +34,24 @@ async function putJSON(caminho, data) {
   return true;
 
 }
+async function postJSON(caminho, data) {
+  try {
+    let response = await fetch(caminho, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: data
+    })
+
+    if(!response.ok)
+      throw new Error(response.statusText);
+  } catch(error){
+    throw new Error('Erro ao fazer POST: '+error);
+  }
+
+  return true;
+
+}
+
 
 // Recebe o caminho da requisição e retorna o json no formato de objeto
 async function getJSON(caminho) {
@@ -45,4 +63,4 @@ async function getJSON(caminho) {
   return data;
 }
 
-export {carregarJSON, putJSON, getJSON, caminho_JSON}
+export {carregarJSON, putJSON, getJSON, postJSON, caminho_JSON}

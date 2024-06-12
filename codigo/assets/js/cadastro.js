@@ -1,4 +1,4 @@
-import { carregarJSON, putJSON, caminho_JSON } from "./modules/json.js";
+import { carregarJSON, putJSON, caminho_JSON, postJSON } from "./modules/json.js";
 
 async function cadastraUsuario() {
     try {
@@ -32,11 +32,12 @@ async function cadastraUsuario() {
             admin: admin
         };
 
-        usuarios.push(novoUsuario);
+        //usuarios.push(novoUsuario);
 
         try {
-            await putJSON(caminho_JSON + "usuarios", JSON.stringify(usuarios));
+            await postJSON(caminho_JSON + "usuarios", JSON.stringify(novoUsuario));
             alert("Usuário cadastrado com sucesso!");
+            window.location.href = "login.html";
         } catch (error) {
             console.error("Erro ao salvar o novo usuário", error);
         }
