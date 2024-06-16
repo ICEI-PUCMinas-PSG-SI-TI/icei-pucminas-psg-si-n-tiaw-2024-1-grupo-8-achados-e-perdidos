@@ -197,7 +197,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 O quadro kanban do grupo no GitHub está disponível através da URL https://github.com/orgs/ICEI-PUCMinas-PSG-SI-TI/projects/42/views/1 e é apresentado, no estado atual, na Figura 2. 
 
-![Kanban GitHub](images/kanbanSprint1.jpg)
+![Kanban GitHub](images/kanbanSprint1.png)
 
 
 
