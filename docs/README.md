@@ -112,13 +112,11 @@ Levando em conta todas as histórias dos usuários é preciso deixar os requisit
 | RF-03  |	O site deve ter uma tela listando itens perdidos em forma de cards que devem conter um nome e descrição breve da instituição/estabelecimento.    | Alta  |
 | RF-04  |	O site deve ter uma tela listando todas as instituições em forma de cards que devem conter um nome e descrição breve da instituição/estabelecimento.    | Alta  |
 | RF-05  |	O site deve ter a opção de marcar um item como encontrado.   | Alta  |
-| RF-06  |	O site deve ter uma barra de busca para procurar instituições.  | Média   |
-| RF-07  |	O site deve ter uma barra de busca para procurar itens perdidos.  | Média   |
-| RF-08  |	O site deve ter uma página de achados recentes.  | Média   |
+| RF-06  |	O site deve ter uma barra de busca para procurar itens perdidos.  | Média   |
+| RF-07  |	O site deve ter uma barra de busca para procurar instituições.  | Média   |
+| RF-08  |	O site deve ter uma função de cadastrar um usuario e realizar o login.| Média   |
 | RF-09  |	O site deve permitir editar as informações de uma instituição e de um item.    | Média   |
-| RF-10  |	O site deve ter uma página “Sobre nós” que vai contar um pouco sobre o propósito da equipe e sobre o projeto.   | Baixa   |
-| RF-11  |	O site deve ter a opção de colocar tags nos itens.  | Baixa   |
-| RF-12  |	O site deve ter a opção de filtrar os itens de acordo com sua respectiva tag.   | Baixa   |
+| RF-10  |	O site deve ter a opção de filtrar os itens de acordo com sua respectiva tag.   | Baixa   |
 
 - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
   correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
@@ -184,7 +182,6 @@ A equipe está organizada da seguinte maneira:
 | Júlia Raquel | Designer e Dev |Responsável pela criação da interface do usuário e pelo desenvolvimento de funcionalidades.|
 | Igor Barroso | Dev |Responsável pela escrita do código do projeto.|
 | Gustavo | Dev |Responsável pela escrita do código do projeto.|
-| Pedro Florêncio |Dev |Responsável pela escrita do código do projeto.|
 | João Paulo | Dev|Responsável pela escrita do código do projeto.|
 
 
