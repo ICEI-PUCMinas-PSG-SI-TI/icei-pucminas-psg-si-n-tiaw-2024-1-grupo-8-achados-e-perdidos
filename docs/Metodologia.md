@@ -36,7 +36,6 @@ A equipe está organizada da seguinte maneira:
 | Júlia Raquel | Designer e Dev |Responsável pela criação da interface do usuário e pelo desenvolvimento de funcionalidades.|
 | Igor Barroso | Dev |Responsável pela escrita do código do projeto.|
 | Gustavo | Dev |Responsável pela escrita do código do projeto.|
-| Pedro Florêncio |Dev |Responsável pela escrita do código do projeto.|
 | João Paulo | Dev|Responsável pela escrita do código do projeto.|
 
 
