@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#cadastro_insti {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#cadastro_insti .instituicao_input {
+    border: none;
+    padding: 10px;
+    border-bottom: solid black 1px;
+    margin: 20px 0;
+    font-size: 1em;
+    width: 80%;
+}
+
+#cadastro_insti label {
+    margin-bottom: 10px;
+    color: #757575;
+    font-size: 1em;
+}
+
+.form_upload_img {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    font-size: 48px;
+    color: #757575;
+    user-select: none;
+    cursor: pointer;
+}
+
+#img_uploaded {
+    height: 100%;
+    max-width: 100%;
+}
+
+#select_instituicao, #select_tag {
+    color: #757575;
+}
+
+.botao_enviar {
+    background-color: #61bdbb;
+    width: 80%;
+    padding: 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+@media screen and (min-width: 800px) {
+    .principal {
+        width: 50%;
+    }
+
+    #cadastro_instituicao {
+        align-items: center;
+    }
+
+    .form_upload_img {
+        height: 250px;
+    }
+}
+
+.navbar {
+    background-color: #c9f4f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.logo img {
+    height: 70px;
+    width: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c59543;
+    font-weight: bold;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #c59543;
+    border-radius: 10px;
+    margin-right: 9px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: #c9f4f8;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.nav-links a:hover {
+    color: #61bdbb;
+}
+
+.nav-links a:active {
+    color: #61bdbb;
+}
+
+
+@media screen and (min-width: 800px) {
+    .principal {
+        width: 50%;
+    }
+
+    #cadastro_item {
+        align-items: center;
+    }
+
+    .form_upload_img {
+        height: 250px;
+    }
+}
