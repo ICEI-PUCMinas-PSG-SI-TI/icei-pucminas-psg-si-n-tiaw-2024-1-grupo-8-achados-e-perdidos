@@ -153,6 +153,14 @@
       "certificacao_admin": null,
       "admin": false,
       "id": "2"
+    },
+    {
+      "id": "f5ad",
+      "cpf": "2131231321321",
+      "username": "107.122.056-08",
+      "senha": "senha123",
+      "certificacao_admin": null,
+      "admin": false
     }
   ]
 }
