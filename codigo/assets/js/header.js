@@ -29,7 +29,7 @@ function atualizarNavbar() {
         }
         else{
             loginSair.innerHTML = `
-            <li><a href="login.html">Logar</a></li>
+            <li><a href="./login.html">Logar</a></li>
         `;
         }
         
