@@ -13,13 +13,13 @@
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="assets/images/logo1.png" alt="logo">
+      <img src="/codigo/assets/images/logo1.png" alt="logo">
     </div>
     <ul class="nav-links">
-      <li><a href="pages/meusachados.html">Meus Achados</a></li>
-      <li><a href="pages/acheiAlgo.html">Achei Algo</a></li>
-      <li><a href="pages/instituicoes.html">Cadastrar Instituição </a></li>
-      <li><a href="index.html">Ver Instituição</a></li>
+      <li><a href="./pages/meusAchados.html">Meus Achados</a></li>
+      <li><a href="./pages/acheiAlgo.html">Achei Algo</a></li>
+      <li><a href="./pages/instituicoes.html">Cadastrar Instituição </a></li>
+      <li><a href="./index.html">Instituições</a></li>
       <li><a id="loginSair">Sair</a></li>
     </ul>
     <div class="burger">
@@ -28,17 +28,24 @@
       <div class="line3"></div>
     </div>
   </nav>
-  <div class="container mt-5">
-    <div class="div_pesquisa">
-			<input type="text" name="" id="input_pesquisa" placeholder="Pesquise um item">
-		</div>
-    <div id="instituicoes"
-      class="row align-itens-center justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-      <div class="justify-content-center d-flex flex-column">
-        <img class="align-self-center" src="https://i.gifer.com/ZKZg.gif" alt="loading" width="300px">
-        <h1>Buscando banco de dados...</h1>
-        <div class="col"> Verifique se a aplicação está rodando em um servidor
-          <br>https://replit.com/@igorba867/JSONServer#db/instituicao.json</div>
+  <div class="" id="background">
+    <div class="inner container bg-light p-3 border">
+      <div class="div_pesquisa d-flex mb-4">
+        <div class="bg-white border border-secondary p-1">
+          <img src="https://cdn-icons-png.flaticon.com/512/160/160050.png" width="20px">
+          <input class="m-0 border-0" type="text" name="" id="input_pesquisa" placeholder="Pesquise">
+        </div>
+      </div>
+
+      <div id="instituicoes"
+        class="tabela row align-itens-center justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+        <div class="justify-content-center d-flex flex-column">
+          <img class="align-self-center" src="https://i.gifer.com/ZKZg.gif" alt="loading" width="300px">
+          <h1>Buscando banco de dados...</h1>
+          <div class="col"> Verifique se a aplicação está rodando em um servidor
+            <br>"http://localhost:3000/"
+          </div>
+        </div>
       </div>
     </div>
   </div>

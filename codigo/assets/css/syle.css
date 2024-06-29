@@ -15,7 +15,28 @@
   box-sizing: content-box;
 }
 
-#instituicoes .col {
+#background {
+  background-color: #224e5b;
+  display: flex;
+  padding: 2em;
+}
+.inner {
+  height: fit-content;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+
+input[type=submit] {
+  color: white;
+}
+
+.bg-light {
+  background-color: #f8f9fa8f !important;
+}
+
+.tabela .col {
   max-width: 300px;
   min-width: 200px;
 }
@@ -31,9 +52,10 @@
 }
 
 .card-instituicao {
-  background-color: rgba(38, 255, 219, 0.2);
+  background-color: rgb(150 255 238);
   border-radius: .8rem !important;
   transition: transform 0.1s ease-in-out;
+  flex-grow: 1;
 }
 .achado {
   background-color: rgba(11, 212, 4, 0.3);
@@ -63,16 +85,20 @@
 .nav-links {
   list-style: none;
   display: flex;
+  margin: 0;
 }
 
 .nav-links li {
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #c59543;
+  color: #c59543 !important;
   font-weight: bold;
+}
+#loginSair{
+  cursor: pointer;
 }
 
 .burger {

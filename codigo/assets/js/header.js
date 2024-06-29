@@ -21,6 +21,7 @@ function atualizarNavbar() {
         loginSair.innerHTML = `
             <li><a href="#" onclick="logout()">Sair</a></li>
         `;
+
     } else {
         if (document.getElementById('instituicoes') != null){
             loginSair.innerHTML += `

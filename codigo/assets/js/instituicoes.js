@@ -1,4 +1,5 @@
 import { carregarJSON, putJSON, caminho_JSON, postJSON } from "./modules/json.js";
+const usuarioLogadoJSON = localStorage.getItem('usuarioLogado');
 
 var link_preenchido = false;
 var link_img = null;
@@ -20,6 +21,7 @@ async function cadastraInstituicao() {
             alert("Uma instituição com este nome já está cadastrada!");
             return;
         }
+
 
         // Aumenta a quantidade de instituição (para o registro do id)
         const meta = await carregarJSON(caminho_JSON + "meta");

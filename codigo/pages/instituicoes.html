@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de instituição</title>
     <link rel="stylesheet" href="../assets/css/instituicoes.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/syle.css">
 </head>
+
 <body>
 
         <nav class="navbar">
@@ -25,18 +30,25 @@
                 <div class="line3"></div>
             </div>
         </nav>
-
-    <main class="principal">
-        <form id="cadastro_insti">
-            <input type="text" name="instituicao" placeholder="Nome da Instituição" required id="nome_instituicao" class="instituicao_input">
-            <input type="text" name="instituicao" placeholder="Endereço" required id="end_insti" class="instituicao_input">
-            <label for="img_insti">Coloque aqui a imagem da instituição</label>
-            <div name="img_insti" class="form_upload_img">+</div>
-            <input type="submit" value="Cadastrar instituição" class="botao_enviar">
-        </form>
-    </main>
+    </header>
+    <div class="" id="background">
+        <div class="inner container bg-light p-3 border">
+            <main class="principal">
+                <form id="cadastro_insti">
+                    <input type="text" name="instituicao" placeholder="Nome da Instituição" required
+                        id="nome_instituicao" class="instituicao_input">
+                    <input type="text" name="instituicao" placeholder="Endereço" required id="end_insti"
+                        class="instituicao_input">
+                    <label for="img_insti">Coloque aqui a imagem da instituição</label>
+                    <div name="img_insti" class="form_upload_img">+</div>
+                    <input type="submit" value="Cadastrar instituição" class="botao_enviar border">
+                </form>
+            </main>
+        </div>
+    </div>
     <script type="module" src="../assets/js/modules/json.js"></script>
     <script type="module" src="../assets/js/instituicoes.js"></script>
     <script src="../assets/js/header.js"></script>
 </body>
+
 </html>
