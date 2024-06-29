@@ -34,5 +34,5 @@ atualizarNavbar();
 function logout() {
     localStorage.removeItem('usuarioLogado');
     atualizarNavbar();
-    window.location.href = '/codigo/index.html'; 
+    window.location.href = '../index.html'; 
 }
