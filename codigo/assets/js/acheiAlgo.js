@@ -82,6 +82,7 @@ async function cadastra_item(intituicoes, usuarioLogado) {
                 putJSON(caminho_JSON + `instituicoes/${id_instituicao}`, JSON.stringify(instituicao))
                 // escreve no arquivo meta
                 putJSON(caminho_JSON + "meta", JSON.stringify(meta))
+                window.location.href = "../index.html";
             }catch(e){
                 console.log('Erro ao salvar novo item')
             }

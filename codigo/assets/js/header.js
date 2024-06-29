@@ -22,9 +22,17 @@ function atualizarNavbar() {
             <li><a href="#" onclick="logout()">Sair</a></li>
         `;
     } else {
-        loginSair.innerHTML = `
-            <li><a href="logar.html">Logar</a></li>
+        if (document.getElementById('instituicoes') != null){
+            loginSair.innerHTML += `
+                <li><a href="pages/login.html">Logar</a></li>
+            `;
+        }
+        else{
+            loginSair.innerHTML = `
+            <li><a href="login.html">Logar</a></li>
         `;
+        }
+        
     }
 }
 
@@ -34,5 +42,6 @@ atualizarNavbar();
 function logout() {
     localStorage.removeItem('usuarioLogado');
     atualizarNavbar();
-    window.location.href = '../index.html'; 
+    window.location.reload();
+
 }
