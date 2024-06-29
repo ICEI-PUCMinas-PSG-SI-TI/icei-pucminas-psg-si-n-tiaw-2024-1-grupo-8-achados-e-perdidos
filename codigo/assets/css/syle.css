@@ -19,6 +19,7 @@
   background-color: #224e5b;
   display: flex;
   padding: 2em;
+  min-height: 95vh;
 }
 .inner {
   height: fit-content;
