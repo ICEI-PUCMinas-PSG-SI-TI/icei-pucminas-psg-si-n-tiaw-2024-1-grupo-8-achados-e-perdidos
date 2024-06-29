@@ -23,7 +23,7 @@ function atualizarNavbar() {
         `;
     } else {
         loginSair.innerHTML = `
-            <li><a href="/codigo/pages/login.html">Logar</a></li>
+            <li><a href="logar.html">Logar</a></li>
         `;
     }
 }

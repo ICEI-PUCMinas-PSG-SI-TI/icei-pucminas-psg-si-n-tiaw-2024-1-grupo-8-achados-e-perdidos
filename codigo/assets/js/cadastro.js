@@ -32,7 +32,7 @@ async function cadastraUsuario() {
             admin: admin
         };
 
-        //usuarios.push(novoUsuario);
+
 
         try {
             await postJSON(caminho_JSON + "usuarios", JSON.stringify(novoUsuario));
