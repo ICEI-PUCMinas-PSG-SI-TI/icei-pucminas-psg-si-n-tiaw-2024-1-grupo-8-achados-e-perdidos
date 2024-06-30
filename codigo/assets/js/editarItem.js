@@ -141,6 +141,8 @@ async function edita_item(instituicoes, usuarioLogado) {
         try {
           // Escreve no arquivo json
           putJSON(caminho_JSON + `instituicoes/${instituicao.id}`, JSON.stringify(instituicao))
+   
+          window.location.href = "./meusachados.html"
           alert("Alterações salvas!");
         } catch (e) {
           console.log('Erro ao salvar novo item')
