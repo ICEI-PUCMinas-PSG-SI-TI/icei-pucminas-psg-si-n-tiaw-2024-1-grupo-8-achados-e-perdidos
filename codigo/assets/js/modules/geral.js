@@ -12,6 +12,7 @@ var tipo_tags = [
     "Livro",
     "Caderno",
     "Casaco",
+    "Material",
     "Outro"
 ];
 
