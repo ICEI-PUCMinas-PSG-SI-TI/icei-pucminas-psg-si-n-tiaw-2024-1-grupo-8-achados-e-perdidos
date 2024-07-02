@@ -30,7 +30,7 @@ async function cadastraInstituicao() {
 
         // Cria o novo objeto de instituição
         const novaInstituicao = {
-            id: meta.qnt_instituicao,
+            id: ""+meta.qnt_instituicao,
             nome: nome,
             endereco: endereco,
             cidade: cidade,

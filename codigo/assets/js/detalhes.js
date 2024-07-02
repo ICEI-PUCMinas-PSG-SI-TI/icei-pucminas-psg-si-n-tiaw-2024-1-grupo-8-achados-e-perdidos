@@ -36,7 +36,7 @@ function obterParametroComoInt(parametroNome) {
                     <p class="nomeitem"><strong>Localização Encontrado:</strong> ${item.localizacao_encontrado}</p>
                     <p class="nomeitem"><strong>Data Encontrado:</strong> ${item.data_encontrado}</p>
                     <p class="nomeitem"><strong>Data Devolvido:</strong> ${item.data_devolvido}</p>
-                    <img class="nomeitem" id="imagem" src="${item.link_img}" alt="${item.nome}">
+                    <img class="nomeitem w-100" id="imagem" src="${item.link_img}" alt="${item.nome}">
                 `;
                 itensPerdidosDiv.appendChild(itemDiv);}
             });}
