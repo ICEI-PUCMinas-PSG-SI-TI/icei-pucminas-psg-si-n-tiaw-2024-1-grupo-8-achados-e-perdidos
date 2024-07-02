@@ -35,10 +35,12 @@
         <div class="inner container bg-light p-3 border">
             <main class="principal">
                 <form id="cadastro_insti">
-                    <input type="text" name="instituicao" placeholder="Nome da Instituição" required
+                    <input type="text" name="nome-instituicao" placeholder="Nome da Instituição" required
                         id="nome_instituicao" class="instituicao_input">
-                    <input type="text" name="instituicao" placeholder="Endereço" required id="end_insti"
+                    <input type="text" name="endereco-instituicao" placeholder="Endereço (Rua, número)" required id="end_insti"
                         class="instituicao_input">
+                    <input type="text" name="cidade-instituicao" placeholder="Cidade" required 
+                        id="cid_insti" class="instituicao_input">
                     <label for="img_insti">Coloque aqui a imagem da instituição</label>
                     <div name="img_insti" class="form_upload_img">+</div>
                     <input type="submit" value="Cadastrar instituição" class="botao_enviar border">

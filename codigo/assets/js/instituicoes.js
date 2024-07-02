@@ -14,6 +14,7 @@ async function cadastraInstituicao() {
 
         const nome = document.getElementById("nome_instituicao").value;
         const endereco = document.getElementById("end_insti").value;
+        const cidade = document.getElementById("cid_insti").value;
 
         // Verificação de existência de instituição com o mesmo nome
         const instituicaoExistente = instituicoes.some(instituicao => instituicao.nome === nome);
@@ -32,6 +33,7 @@ async function cadastraInstituicao() {
             id: meta.qnt_instituicao,
             nome: nome,
             endereco: endereco,
+            cidade: cidade,
             link_img: link_img,
             itens_perdidos: []
         };
