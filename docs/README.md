@@ -199,7 +199,426 @@ O quadro kanban do grupo no GitHub está disponível através da URL https://git
 
 ![Kanban GitHub](images/kanbanSprint1.png)
 
+##	Projeto de Interface
+Dentre as preocupações para a montagem da interface do sistema, estamos estabelecendo foco em questões como agilidade, acessibilidade e usabilidade. Desta forma, o projeto tem uma identidade visual padronizada em todas as telas que são projetadas para funcionamento em desktops e dispositivos móveis.
+### Fluxo do Usuário
+O diagrama apresentado na Figura X mostra o fluxo de interação do usuário pelas telas do sistema. Cada uma das telas deste fluxo é detalhada na seção de Wireframes que se segue. Para visualizar o Wireframe interativo, acesse o prototipo no figma.
+
+![Kanban GitHub](images/Fluxo.png) 
+Figura X - Fluxo de telas do usuário
+
+Wireframes
+Conforme fluxo de telas do projeto, apresentado no item anterior, as telas do sistema são apresentadas em detalhes nos itens que se seguem. As telas do sistema apresentam uma estrutura comum que é apresentada na Figura X. Nesta estrutura, existem 3 grandes blocos, descritos a seguir. São eles:
+-	Cabeçalho - local onde são dispostos elementos fixos de identidade (logo) e navegação principal do site (menu da aplicação);
+-	Conteúdo - apresenta o conteúdo da tela em questão;
+-	Barra lateral - apresenta os elementos de navegação secundária, geralmente associados aos elementos do bloco de conteúdo.
+
+![Kanban GitHub](images/Estrutura.png) 
+
+Figura X - Estrutura padrão do site
+
+### Tela  Entrada
+A tela de entrada é a primeira tela que o usuário vai ter acesso ao entrar no site, de um jeito bem colorido e interativo para trazer “curiosidade” ao cliente
+-	Componente de login que permite que o usuário acesse ao site, colocando nome e senha;
+-	Componente de criar conta, que permite ao usuário criar uma conta nova no site;
+  
+![Kanban GitHub](images/Fluxo.png) 
+
+ 
+
+
+### Tela  Achei algo
+Assim que o usuário encontra algum objeto perdido, ele  entra no site e consegue cadastrar esse objeto
+-	Componente de menu igual da home page
+-	Componente de campos para colocar especificações do objeto
+-	Componente de imagem para colocar foto do objeto
+  
+![Kanban GitHub](images/cadastroitem.png) 
+  
+
+
+### Tela – Cadastro da instituição
+Nessa tela o usuário pode cadastrar uma instituição que quiser que tenha o programa de achados e perdidos 
+Com componentes iguais aos da página de achei algo;
+
+![Kanban GitHub](images/Control-V-(1).png) 
+ 
+
+### Tela - Achados
+A tela que permite que o usuário que perdeu algo consiga ver se o item que ele perdeu já está cadastrado no site para ele conseguir seu objeto de volta
+⦁	Componente de marcação se o usuário já tiver encontrado seu item, marcá-lo como encontrado 
+
+![Kanban GitHub](images/listagemperdidos.png) 
+
+
+### Tela – Ver instituições
+A tela de ver instituições permite ao usuário  ver as instituições que foram cadastradas no site para usar o programa de achados e perdidos
+
+![Kanban GitHub](images/listageminst.png) 
+
+ 
 
 
 
+
+### Tela – Cadastro 
+Na tela que permite ao usuário se cadastrar no site caso ele não tenha login e assim ter acesso a todas as outras páginas do site
+![Kanban GitHub](images/cadastro.png) 
+
+ 
+
+
+####	Implementação da Solução
+Nesta seção são apresentados os detalhes técnicos da solução criada pelo equipe, tratando da Arquitetura da Solução, as estruturas de dados e as telas já implementadas.
+#### Arquitetura da Solução
+
+Diagrama de Componentes
+Os componentes que fazem parte da solução são apresentados na Figura que se segue.
+
+![Kanban GitHub](images/Control-V.png) 
+
+ 
+
+Figura X - Arquitetura da Solução
+
+A solução implementada conta com os seguintes módulos:
+-	Navegador - Interface básica do sistema 
+   -	Páginas Web - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
+   -	Local Storage - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON. São eles: 
+      -	Canais - seções de notícias apresentadas 
+      -	Comentários - registro de opiniões dos usuários sobre as notícias
+      -	Preferidas - lista de notícias mantidas para leitura e acesso posterior
+-	News API - plataforma que permite o acesso às notícias exibidas no site.
+-	Hospedagem - local na Internet onde as páginas são mantidas e acessadas pelo navegador.
+	
+### Hospedagem
+O site utiliza a plataforma do Github Pages como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL: 
+
+[Achados e perdidos ](https://icei-pucminas-psg-si-ti.github.io/icei-pucminas-psg-si-n-tiaw-2024-1-grupo-8-achados-e-perdidos/codigo/index.html)
+
+
+
+Template do Site
+
+![Kanban GitHub](images/listageminst.png) 
+
+Template padrão do site
+
+O template criado está disponível no site Templante..  e é composto pelos seguintes layouts: 
+-	Tela De Instituição
+-	Tela de Login
+-	Tela de cadastro
+-	Tela de meus achados
+-	Tela de listagem dos objetos perdidos
+-	Tela de cadastro de instituição
+-	Tela de cadastro objeto
+-	Tela de detalhes de um item
+
+A responsividade segue o padrão do Bootstrap
+
+#### Tela Principal
+Tela que abrange as Instituições e que direciona o usuário para o Login
+
+![Kanban GitHub](images/listageminst.png) 
+ 
+#### Tela  Login
+Este layout é utilizado para o usuário entrar no site.
+
+![Kanban GitHub](images/login.png) 
+ 
+#### Tela de Cadastro
+Local onde o usuário se cadastra no site.
+
+![Kanban GitHub](images/cadastro.png) 
+ 
+#### Tela de Meus Achados
+Local onde aparecem os itens achados por aquele usuário.
+
+![Kanban GitHub](images/meusachados.png) 
+ 
+#### Tela de Listagem de objetos perdidos
+Local onde aparecem os itens perdidos na instituição.
+
+![Kanban GitHub](images/listagemperdidos.png) 
+ 
+#### Tela de Cadastro de instituição
+Local onde pode ser cadastrado uma nova instituição no sistema
+
+![Kanban GitHub](images/Control-V-(1).png) 
+ 
+ #### Tela de Cadastro de objetos
+Local onde pode ser cadastrado um objeto perdido no sistema
+
+![Kanban GitHub](images/cadastroitem.png) 
+ 
+#### Tela de Detalhes de um item
+Local onde aparecem detalhes sobre o item perdido
+
+![Kanban GitHub](images/detalhes.png) 
+ 
+
+
+## Funcionalidades do Sistema (Telas)
+Nesta seção são apresentadas as telas desenvolvidas para cada uma das funcionalidades do sistema. O respectivo endereço (URL) e outras orientações de acesso são apresentadas na sequência.
+## Entrega Sprint 2 - Cadastro de Instituição (RF-01)
+Alunos responsável: Gustavo Inacio Jeronymo Oliveira
+
+Essa tela é responsável por cadastrar uma instituição no nosso sistema.
+
+![Kanban GitHub](images/Control-V-(1).png) 
+
+#### Requisitos atendidos
+- RF-01 - O site deve ter a opção de cadastrar uma instituição/estabelecimento com nome, descrição…
+
+
+#### Artefatos da funcionalidade
+-	instituicoes.html
+-	instituicoes.js
+-	instituicoes.css
+
+#### Estrutura de Dados
+{
+	"instituicoes": [
+		{
+			"id": 1,
+			"nome": "puc minas",
+			"endereco": "rua das manabeiras",
+			"Link_img":      "https://exemplo.com/imagens/puc.png",
+					}
+	]
+}
+
+#### Instruções de acesso
+-	Na barra de menu clique em “Cadastrar instituição” 
+-	Cadastre a instituição desejada
+  
+
+### Cadastro de Item (RF-02)
+Alunos responsável: Igor Barroso
+
+Essa tela permite que o usuário cadastre o item que ele achou 
+
+![Kanban GitHub](images/cadastroitem.png) 
+ 
+#### Requisitos atendidos
+-	RF-02 - O site deve ter a função de cadastrar o item perdido com nome, descrição…
+
+
+
+#### Artefatos da funcionalidade
+-	acheiAlgo.html
+-	acheiAlgo.js
+-	acheiAlgo.css
+
+
+#### Estrutura de Dados
+"Itens_perdidos": 
+[ { "Id": 101, 
+"Tags": ["eletronico", "preto", "portatil"],
+ "Nome": "Smartphone", "Descricao": "Smartphone preto encontrado na biblioteca.", 
+"Link_img": "https://exemplo.com/imagens/smartphone.png", "Username_encontrou": "joaosilva",
+ "Encontrado": true, 
+"Data_encontrado": "2023-04-05T14:30:00Z",
+ "Data_devolvido": null,
+ "Localizacao_encontrada": "Biblioteca" }, ],
+
+
+#### Instruções de acesso
+-	Na barra de Menu, clique em “Achei algo”
+-	Cadastre o Item que você achou
+
+### Listagem de Itens Perdidos (RF-03)
+Alunos responsável: João Paulo
+
+A tela de listagem de itens, permite que o usuário veja todos os itens que foi perdido naquela instituição
+
+![Kanban GitHub](images/listagemperdidos.png) 
+ 
+#### Requisitos atendidos
+-	RF-03 - O site deve ter uma tela listando itens perdidos em forma de cards que devem conter um nome e descrição breve da instituição/estabelecimento.
+
+
+#### Artefatos da funcionalidade
+-	ItensPerdidos.html
+-	ItensPerdidos.js
+-	achados.css
+
+
+#### Instruções de acesso
+-	No menu, vá em “ver instituição”
+-	Escolha a instituição que deseja visualizar os itens
+-	CLique na instituição
+
+### Listagem de Instituição (RF-04)
+Alunos responsável: Danilo Rigette
+
+Essa tela é a tela principal e ela permite que o usuário veja todas as instituições do site.
+
+![Kanban GitHub](images/listageminst.png) 
+ 
+#### Requisitos atendidos
+-	RF-04 - O site deve ter uma tela listando todas as instituições em forma de cards que devem conter um nome e descrição breve da instituição/estabelecimento
+
+
+#### Artefatos da funcionalidade
+-	Index.html
+-	main.js
+-	syle.css
+
+
+
+#### Instruções de acesso
+-	Abra um navegador de Internet e informe a URL ⦁	Achados e perdidos
+-	A tela de Instituições  é a primeira funcionalidade exibida pelo sistema.
+
+### Detalhamento de um Item (RF-08)
+Alunos responsável: Julia Raquel
+
+Essa tela permite que o usuário veja detalhes sobre um item perdido 
+
+![Kanban GitHub](images/detalhes.png) 
+ 
+#### Requisitos atendidos
+-	RF-08 - O site deve ter uma página de detalhamento do Item
+
+
+#### Artefatos da funcionalidade
+-	detalhamentossobreitem.html
+-	detalhes.js
+-	detalhes.css
+
+
+#### Estrutura de Dados
+"itens_perdidos":
+ [ { "id": 101, 
+"tags": ["eletronico", "preto", "portatil"],
+ "nome": "Smartphone", 
+"descricao": "Smartphone preto encontrado na biblioteca.", 
+"link_img": "https://exemplo.com/imagens/smartphone.png",
+ "encontrado": true,
+ "data_encontrado": "2023-04-05t14:30:00z", "localizacao_encontrada": "Biblioteca" }, ]
+
+
+#### Instruções de acesso
+-	No menu, vá em “ver instituição”
+-	Escolha a instituição que deseja visualizar os itens
+-	CLique na instituição
+-	Escolha qualquer item perdido
+-	veja os detalhes desse item
+
+## Entrega Sprint 3 - 
+### Marcar item como encontrado (RF-05)
+Alunos responsável: Júlia raquel
+
+![Kanban GitHub](images/detalhes.png) 
+
+
+Essa funcionalidade é responsável por marcar algum item como devolvido.
+ 
+
+#### Requisitos atendidos
+-	RF-05 - O site deve ter a opção de marcar um item como encontrado.
+
+
+#### Artefatos da funcionalidade
+-	meusAchados.html
+-	meusAchados.js
+-	achados.css
+
+
+#### Instruções de acesso
+-	No Menu, vá na aba de “Meus Achados”
+-	Selecione o Objeto desejado e o marque como devolvido.
+
+### Busca de instituições (RF-06)
+Alunos responsável: Gustavo inacio
+
+Essa tela permite que o usuário procure a instituição desejada pela barra de pesquisa
+
+![Kanban GitHub](images/procurarinstituição.png) 
+ 
+#### Requisitos atendidos
+-	RF-06 - O site deve ter uma barra de busca para procurar instituições.
+
+
+#### Artefatos da funcionalidade
+-	Index.html
+-	main.js
+-	syle.css	
+
+#### Instruções de acesso
+-	No menu, vá em “ver instituição”
+-	Pesquise a instituição que desejar
+
+### Busca de itens perdidos (RF-07)
+Alunos responsável: Igor Barroso
+
+Essa tela permite que o usuário procure o item desejado pela barra de pesquisa
+
+![Kanban GitHub](images/procuraritem.png) 
+ 
+#### Requisitos atendidos
+-	RF-07 - O site deve ter uma barra de busca para procurar itens perdidos..
+
+
+#### Artefatos da funcionalidade
+-	ItensPerdidos.html
+-	ItensPerdidos.js
+-	achados.css
+
+
+#### Instruções de acesso
+-	No menu, vá em “ver instituição”
+-	Clique em uma instituição
+-	Pesquise o item desejado
+
+
+
+### Editar itens (RF-09)
+Alunos responsável: Danilo Rigette
+
+Essa tela permite que o usuário edite a informação de algum item
+
+![Kanban GitHub](images/editar.png) 
+  
+#### Requisitos atendidos
+-	RF-09 - O site deve permitir editar as informações  de um item.
+
+
+#### Artefatos da funcionalidade
+-	editarItem.html
+-	editarItem.js
+-	Verificacao.js
+-	acheiAlgo.css
+
+
+#### Instruções de acesso
+-	No Menu, vá na aba de “Meus Achados”
+-	Clique no lápis e edite o item desejado.
+
+### Cadastro de usuario (RF-10)
+Alunos responsável: Danilo Rigette
+
+Essa tela permite que um novo usuário se cadastre no site
+
+![Kanban GitHub](images/meusachados.png) 
+ 
+#### Requisitos atendidos
+⦁	RF-10 - O site deve ter uma página para cadastro do usuário
+
+
+#### Artefatos da funcionalidade
+-	cadastro.html
+-	cadastro.js
+-	cadastro.css
+
+
+#### Instruções de acesso
+-	No Menu, vá na aba de “Logar”
+-	Na página de Login clique em “cadastrar”.
+
+
+
+
+
 
